@@ -27,6 +27,10 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [Pokenode-ts repo](https://github.com/Gabb-c/pokenode-ts?tab=readme-ov-file) by [Gabb-c](https://github.com/Gabb-c)
 - [Pokenode-ts](https://pokenode-ts.vercel.app)
 - [Pokemon Type SVG Icons](https://github.com/duiker101/pokemon-type-svg-icons) by [Duiker101](https://github.com/duiker101)
+- [MDN Web Docs](https://developer.mozilla.org/pt-BR/)
+- [`combobox` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role)
+- [Tailwind Docs](https://tailwindcss.com/docs/)
+- [Next.js App Router](https://nextjs.org/docs/app)
 
 ## Copyright Notice
 
