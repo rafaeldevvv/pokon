@@ -30,7 +30,17 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [MDN Web Docs](https://developer.mozilla.org/pt-BR/)
 - [`combobox` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role)
 - [Tailwind Docs](https://tailwindcss.com/docs/)
-- [Next.js App Router](https://nextjs.org/docs/app)
+- [Next.js App Router Docs](https://nextjs.org/docs/app)
+- [What does 'x packages are looking for funding' mean when running `npm install`?](https://stackoverflow.com/questions/58972251/what-does-x-packages-are-looking-for-funding-mean-when-running-npm-install)
+- [Tailwind Playground](https://play.tailwindcss.com/)
+- [Font Awesome Docs](https://fontawesome.com/docs/)
+- [Babel Docs](https://babeljs.io/docs/)
+- [configuring babel](https://nextjs.org/docs/pages/building-your-application/configuring/babel)
+- [Resolving "Babel and `next/font` Conflict" in Next.js](https://nextjs.org/docs/messages/babel-font-loader-conflict)
+- [@babel/preset-typescript](https://babeljs.io/docs/babel-preset-typescript)
+- [Error: Caching was left unconfigured. Babel's plugins when I installed Font Awesome to my react app](https://stackoverflow.com/questions/71356327/error-caching-was-left-unconfigured-babels-plugins-when-i-installed-font-awes)
+- [Parsing error : Cannot find module 'next/babel'](https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel)
+- []()
 
 ## Copyright Notice
 

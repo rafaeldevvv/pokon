@@ -9,6 +9,11 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      sm: "30em",
+      md: "48em",
+      lg: "62em",
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -19,6 +24,10 @@ const config: Config = {
         body: ["var(--ff-mono-body)", ...defaultTheme.fontFamily.mono],
         title: ["var(--ff-mono-title)", ...defaultTheme.fontFamily.mono],
       },
+    },
+    container: {
+      center: true,
+      padding: "2rem",
     },
   },
   plugins: [],

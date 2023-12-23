@@ -1,11 +1,9 @@
 export default function Home() {
   return (
-    <div>
-      <h1 className="text-8xl font-title">Pokón</h1>
-      <p>
-        Uncover the Pokémon universe with our site! Browse through a diverse
-        collection of Pokémon, discover unique berries, and explore essential
-        items for your journey. Your go-to resource for all things Pokémon!
+    <div className="container">
+      <h1 className="text-8xl font-title text-center">Pokón</h1>
+      <p className="text-center font-body max-w-lg mx-auto">
+        Explore a variety of creatures, find special berries, and check out essential items for your journey.
       </p>
       <SearchForm />
     </div>
@@ -15,7 +13,7 @@ export default function Home() {
 export function SearchForm() {
   return (
     <form role="search">
-      <label htmlFor="search-input" id="search-input-label">
+      <label htmlFor="search-input" id="search-input-label" className="">
         Search Pokón
       </label>
       <SearchComboboxInput
