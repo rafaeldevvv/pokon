@@ -86,7 +86,7 @@ export function PrimaryNavigation({ isExpanded }: { isExpanded: boolean }) {
 
   let primaryNavClassName = "w-60 h-42 flex gap-y-3 md:gap-y-0 md:gap-x-8 justify-center content-center flex-col absolute right-0 top-16 bg-white px-6 py-6 border-black border-2 text-xl md:static md:bg-transparent md:flex-row md:w-auto md:border-0 md:p-0 transition-size duration-500 ease-in-out origin-top-right";
   if (!isExpanded) {
-    primaryNavClassName += " scale-0"
+    primaryNavClassName += " max-[48em]:scale-0"
   }
 
   return (
