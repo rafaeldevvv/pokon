@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <div className="container">
       <h1 className="text-8xl font-title text-center">Pokón</h1>
-      <p className="text-center font-body max-w-lg mx-auto">
+      <p className="text-center max-w-lg mx-auto">
         Explore a variety of creatures, find special berries, and check out essential items for your journey.
       </p>
       <SearchForm />

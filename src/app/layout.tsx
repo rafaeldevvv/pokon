@@ -16,8 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={[vt323.variable, courier.variable].join(" ")}>
+    <html
+      lang="en"
+      className={[vt323.variable, courier.variable, "h-full"].join(" ")}
+    >
+      <body className="font-body h-full grid grid-rows-global-layout">
         <Header />
         <main>{children}</main>
         <Footer />

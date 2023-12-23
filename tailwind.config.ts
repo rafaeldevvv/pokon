@@ -26,6 +26,9 @@ const config: Config = {
       },
       transitionProperty: {
         "size": "height, width, transform"
+      },
+      gridTemplateRows: {
+        'global-layout': 'max-content 1fr  max-content'
       }
     },
     container: {
