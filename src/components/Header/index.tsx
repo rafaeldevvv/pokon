@@ -1,15 +1,17 @@
 "use client";
 
+import { useState } from "react";
+
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 export default function Header() {
   return (
-    <header className="container flex justify-between items-center py-6">
+    <header className="container flex justify-between items-center py-6 sticky top-0">
       <div>
         <Link
           href="/"
@@ -24,16 +26,25 @@ export default function Header() {
 }
 
 export function Nav() {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  let icon: React.ReactNode;
+  if (isExpanded) {
+    icon = <FontAwesomeIcon icon={faX} size="3x" />;
+  } else {
+    icon = <FontAwesomeIcon icon={faBars} size="3x" />;
+  }
+
   return (
     <nav className="relative">
       <MobileNavToggle
         controls="primary-navigation"
-        onClick={() => {}}
-        isExpanded={false}
+        onToggle={setIsExpanded}
+        isExpanded={isExpanded}
       >
-        <FontAwesomeIcon icon={faBars} size="3x" />
+        {icon}
       </MobileNavToggle>
-      <PrimaryNavigation />
+      <PrimaryNavigation isExpanded={isExpanded} />
     </nav>
   );
 }
@@ -41,24 +52,24 @@ export function Nav() {
 export function MobileNavToggle({
   isExpanded,
   controls,
-  onClick,
+  onToggle,
   children,
 }: {
   isExpanded: boolean;
   controls: string;
-  onClick: () => void;
+  onToggle: (isExpanded: boolean) => void;
   children: React.ReactNode;
 }) {
   const label = isExpanded ? "Close main menu" : "Open main menu";
 
   return (
     <button
-      className={"block aspect-1 md:hidden"}
+      className="block aspect-1 md:hidden"
       aria-expanded={isExpanded}
       aria-controls={controls}
       aria-haspopup="menu"
       aria-label={label}
-      onClick={onClick}
+      onClick={() => onToggle(!isExpanded)}
     >
       <span className={"sr-only"}>{label}</span>
       {children}
@@ -66,16 +77,21 @@ export function MobileNavToggle({
   );
 }
 
-export function PrimaryNavigation() {
+export function PrimaryNavigation({ isExpanded }: { isExpanded: boolean }) {
   const links = [
     ["Pokémon Catalog", "/pokemons"],
     ["Berries Catalog", "/berries"],
     ["Items Catalog", "/items"],
   ] as const;
 
+  let primaryNavClassName = "w-60 h-42 flex gap-y-3 md:gap-y-0 md:gap-x-8 justify-center content-center flex-col absolute right-0 top-16 bg-white px-6 py-6 border-black border-2 text-xl md:static md:bg-transparent md:flex-row md:w-auto md:border-0 md:p-0 transition-size duration-500 ease-in-out origin-top-right";
+  if (!isExpanded) {
+    primaryNavClassName += " scale-0"
+  }
+
   return (
     <ul
-      className="flex gap-y-3 md:gap-y-0 md:gap-x-8 justify-center content-center flex-col absolute right-0 top-16 bg-white w-60 h-42 px-6 py-6 border-black border-2 text-xl md:static md:bg-transparent md:flex-row md:w-auto md:border-0 md:p-0"
+      className={primaryNavClassName}
       id="primary-navigation"
     >
       {links.map(([name, path]) => {

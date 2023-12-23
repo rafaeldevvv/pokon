@@ -24,6 +24,9 @@ const config: Config = {
         body: ["var(--ff-mono-body)", ...defaultTheme.fontFamily.mono],
         title: ["var(--ff-mono-title)", ...defaultTheme.fontFamily.mono],
       },
+      transitionProperty: {
+        "size": "height, width, transform"
+      }
     },
     container: {
       center: true,
