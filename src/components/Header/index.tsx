@@ -3,24 +3,28 @@
 import { useState } from "react";
 
 import Link from "next/link";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 export default function Header() {
   return (
-    <header className="container flex justify-between items-center py-6 sticky top-0">
-      <div>
-        <Link
-          href="/"
-          className="font-bold font-title text-5xl text-yellow-600 block drop-shadow-sm text-shadow"
-        >
-          Pokón
-        </Link>
+    <header className="fixed top-0 right-0 left-0 bg-white z-[9999]">
+      <div className="container flex justify-between items-center mx-auto h-[83px]">
+        <div>
+          <Link
+            href="/"
+            className="font-bold font-title text-5xl text-yellow-600 block drop-shadow-sm text-shadow"
+          >
+            Pokón
+          </Link>
+        </div>
+        <Nav />
       </div>
-      <Nav />
     </header>
   );
 }
@@ -84,16 +88,14 @@ export function PrimaryNavigation({ isExpanded }: { isExpanded: boolean }) {
     ["Items Catalog", "/items"],
   ] as const;
 
-  let primaryNavClassName = "w-60 h-42 flex gap-y-3 md:gap-y-0 md:gap-x-8 justify-center content-center flex-col absolute right-0 top-16 bg-white px-6 py-6 border-black border-2 text-xl md:static md:bg-transparent md:flex-row md:w-auto md:border-0 md:p-0 transition-size duration-500 ease-in-out origin-top-right";
+  let primaryNavClassName =
+    "w-60 h-42 flex gap-y-3 md:gap-y-0 md:gap-x-8 justify-center content-center flex-col absolute right-0 top-16 bg-white px-6 py-6 border-black border-2 text-xl md:static md:bg-transparent md:flex-row md:w-auto md:border-0 md:p-0 transition-size duration-500 ease-in-out origin-top-right";
   if (!isExpanded) {
-    primaryNavClassName += " max-[48em]:scale-0"
+    primaryNavClassName += " max-[48em]:scale-0";
   }
 
   return (
-    <ul
-      className={primaryNavClassName}
-      id="primary-navigation"
-    >
+    <ul className={primaryNavClassName} id="primary-navigation">
       {links.map(([name, path]) => {
         return (
           <li key={path} className="text-right">
