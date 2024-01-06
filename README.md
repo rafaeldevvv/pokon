@@ -40,7 +40,13 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [@babel/preset-typescript](https://babeljs.io/docs/babel-preset-typescript)
 - [Error: Caching was left unconfigured. Babel's plugins when I installed Font Awesome to my react app](https://stackoverflow.com/questions/71356327/error-caching-was-left-unconfigured-babels-plugins-when-i-installed-font-awes)
 - [Parsing error : Cannot find module 'next/babel'](https://stackoverflow.com/questions/68163385/parsing-error-cannot-find-module-next-babel)
-- []()
+- [`next/image` Un-configured Host](https://nextjs.org/docs/messages/next-image-unconfigured-host)
+- [How to organize TypeScript interfaces \[closed\]](https://stackoverflow.com/questions/36633033/how-to-organize-typescript-interfaces)
+- [301 vs 302 Redirect: What are the Differences Between Them?](https://rockcontent.com/blog/301-vs-302-redirect/)
+
+## Aknowledgements
+
+[PokéAPI](https://pokeapi.co) for all the data available, [Gabb-c](https://github.com/Gabb-c) for the TS NodeJS wrapper, [duiker101](https://github.com/duiker101/pokemon-type-svg-icons) for the SVG Icons, [noeleart](https://www.deviantart.com/noeleart/gallery) for the awesome homepage background image.
 
 ## Copyright Notice
 

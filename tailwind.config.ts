@@ -29,6 +29,9 @@ const config: Config = {
       },
       gridTemplateRows: {
         'global-layout': 'max-content 1fr  max-content'
+      },
+      spacing: {
+        'header': '83px'
       }
     },
     container: {

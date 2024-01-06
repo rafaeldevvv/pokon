@@ -13,8 +13,8 @@ config.autoAddCss = false;
 
 export default function Header() {
   return (
-    <header className="fixed top-0 right-0 left-0 bg-white z-[9999]">
-      <div className="container flex justify-between items-center mx-auto h-[83px]">
+    <header className="fixed top-0 right-0 left-0 bg-white z-[9999] border-b border-solid border-black">
+      <div className="container flex justify-between items-center mx-auto h-header">
         <div>
           <Link
             href="/"
@@ -83,9 +83,9 @@ export function MobileNavToggle({
 
 export function PrimaryNavigation({ isExpanded }: { isExpanded: boolean }) {
   const links = [
-    ["Pokémon Catalog", "/pokemons"],
-    ["Berries Catalog", "/berries"],
-    ["Items Catalog", "/items"],
+    ["Pokémon Catalog", "/pokemon-catalog"],
+    ["Berries Catalog", "/berries-catalog"],
+    ["Items Catalog", "/items-catalog"],
   ] as const;
 
   let primaryNavClassName =
