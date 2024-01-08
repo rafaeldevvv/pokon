@@ -1,4 +1,4 @@
-import { getPokemonsForPage } from "@/utils/pokemon";
+import { getPokemonsForPage } from "@/data-fetching/pokemon";
 import { CatalogSection, PokemonList } from "@/components";
 
 export default async function PokemonCatalog() {

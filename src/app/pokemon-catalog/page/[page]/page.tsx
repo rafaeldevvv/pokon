@@ -1,6 +1,9 @@
 import { CatalogSection, PokemonList } from "@/components";
 import { checkPageNumber, getNumberOfPages } from "@/utils/common";
-import { getCount as getPokemonCount, getPokemonsForPage } from "@/utils/pokemon";
+import {
+  getCount as getPokemonCount,
+  getPokemonsForPage,
+} from "@/data-fetching/pokemon";
 
 export default async function Page({ params }: { params: { page: string } }) {
   const numPokemons = await getPokemonCount();
@@ -12,8 +15,8 @@ export default async function Page({ params }: { params: { page: string } }) {
   const pokemons = await getPokemonsForPage(page);
 
   return (
-   <CatalogSection label="Pokemon List">
+    <CatalogSection label="Pokemon List">
       <PokemonList pokemons={pokemons} />
-   </CatalogSection>
-  )
+    </CatalogSection>
+  );
 }
