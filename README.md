@@ -26,8 +26,9 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [About `.d.ts` files](https://github.com/andreferreiradlw)
 - [Pokenode-ts repo](https://github.com/Gabb-c/pokenode-ts?tab=readme-ov-file) by [Gabb-c](https://github.com/Gabb-c)
 - [Pokenode-ts](https://pokenode-ts.vercel.app)
+- [Axios Cache Interceptor](https://axios-cache-interceptor.js.org/)
 - [Pokemon Type SVG Icons](https://github.com/duiker101/pokemon-type-svg-icons) by [Duiker101](https://github.com/duiker101)
-- [MDN Web Docs](https://developer.mozilla.org/pt-BR/)
+- [MDN Web Docs](https://developer.mozilla.org/pt-BR/) - Awesome resource always!
 - [`combobox` role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/combobox_role)
 - [Tailwind Docs](https://tailwindcss.com/docs/)
 - [Next.js App Router Docs](https://nextjs.org/docs/app)
@@ -43,10 +44,11 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [`next/image` Un-configured Host](https://nextjs.org/docs/messages/next-image-unconfigured-host)
 - [How to organize TypeScript interfaces \[closed\]](https://stackoverflow.com/questions/36633033/how-to-organize-typescript-interfaces)
 - [301 vs 302 Redirect: What are the Differences Between Them?](https://rockcontent.com/blog/301-vs-302-redirect/)
+- [The 100% correct way to structure a React app (or why there’s no such thing)](https://david-gilbertson.medium.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
 
 ## Aknowledgements
 
-[PokéAPI](https://pokeapi.co) for all the data available, [Gabb-c](https://github.com/Gabb-c) for the TS NodeJS wrapper, [duiker101](https://github.com/duiker101/pokemon-type-svg-icons) for the SVG Icons, [noeleart](https://www.deviantart.com/noeleart/gallery) for the awesome homepage background image.
+[PokéAPI](https://pokeapi.co) for all the data available, [Gabb-c](https://github.com/Gabb-c) for the TypeScript NodeJS wrapper, [duiker101](https://github.com/duiker101/pokemon-type-svg-icons) for the SVG Icons, [noeleart](https://www.deviantart.com/noeleart/gallery) for the awesome homepage background image.
 
 ## Copyright Notice
 
