@@ -5,7 +5,7 @@ import SearchButton from "./SearchButton";
 import SearchForm from "./SearchForm";
 import SearchInput from "./SearchInput";
 import Pagination from "./Pagination";
-import PokemonBox from "./PokemonBox";
+import PokemonCard from "./PokemonCard";
 import PokemonList from "./PokemonList";
 import CatalogSection from "./CatalogSection";
 
@@ -17,7 +17,7 @@ export {
   SearchForm,
   SearchInput,
   Pagination,
-  PokemonBox,
+  PokemonCard,
   PokemonList,
   CatalogSection
 };

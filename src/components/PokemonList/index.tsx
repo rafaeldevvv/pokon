@@ -1,5 +1,5 @@
 import type { PokemonWithColor } from "@/ts/types";
-import { PokemonBox } from "@/components";
+import { PokemonCard } from "@/components";
 
 export default function PokemonList({
   pokemons,
@@ -11,7 +11,7 @@ export default function PokemonList({
       {pokemons.map((p, i) => {
         return (
           <li key={p.name}>
-            <PokemonBox pokemon={p} />
+            <PokemonCard pokemon={p} />
           </li>
         );
       })}

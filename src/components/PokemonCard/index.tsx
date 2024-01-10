@@ -1,13 +1,9 @@
 import Image from "next/image";
-import type { PokemonWithColor } from "@/ts/types";
+import type { PokemonWithColor, PokemonStat } from "@/ts/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBan } from "@fortawesome/free-solid-svg-icons";
 
-export default function PokemonItem({
-  pokemon,
-}: {
-  pokemon: PokemonWithColor;
-}) {
+export default function PokemonCard({ pokemon }: { pokemon: PokemonWithColor }) {
   const sprite = pokemon.sprites.front_default;
 
   return (
@@ -17,10 +13,13 @@ export default function PokemonItem({
         sprite={sprite}
         color={pokemon.color}
       />
-      <div className="border-t border-solid border-black py-2 px-2">
-        <h3 className="capitalize text-lg text-center leading-none">
+      <div className="border-y border-solid border-black py-2 px-2">
+        <h3 className="capitalize text-center leading-none font-title text-2xl">
           {pokemon.name.replaceAll("-", " ")}
         </h3>
+      </div>
+      <div className="px-2 py-3">
+        <PokemonStats stats={pokemon.stats} />
       </div>
     </div>
   );
@@ -66,5 +65,23 @@ export function PokemonSprite({
       />
       {img}
     </div>
+  );
+}
+
+export function PokemonStats({ stats }: { stats: PokemonStat[] }) {
+  return (
+    <ul>
+      {stats.map((stat) => {
+        const { name } = stat.stat;
+        const baseState = stat.base_stat;
+        return (
+          <li key={stat.stat.name}>
+            {name.toUpperCase().replaceAll("-", " ")}
+            {' '}
+            {baseState}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
