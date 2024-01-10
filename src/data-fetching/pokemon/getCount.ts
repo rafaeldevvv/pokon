@@ -1,4 +1,5 @@
 import listPokemons from "./listPokemons";
+import "server-only";
 
 /**
  * Fetches the total number of pokemon available.

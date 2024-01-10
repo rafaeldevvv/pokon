@@ -1,6 +1,7 @@
 import type { Pokemon } from "@/ts/types";
 import listPokemons from "./listPokemons";
 import getPokemon from "./getPokemon";
+import "server-only";
 
 /**
  * Fetches a list of {@link Pokemon} given an offset and a limit.

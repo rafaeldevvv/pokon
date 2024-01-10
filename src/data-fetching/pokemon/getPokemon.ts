@@ -1,5 +1,6 @@
 import type { Pokemon } from "@/ts/types";
 import fetchPokeApiData from "../fetchPokeApiData";
+import "server-only";
 
 /**
  * Fetches a pokemon by its name or id.

@@ -1,5 +1,6 @@
 import type { NamedAPIResourceList } from "@/ts/types";
 import fetchPokeApiData from "../fetchPokeApiData";
+import "server-only";
 
 /**
  * Fetches a pokemon {@link NamedAPIResourceList}.

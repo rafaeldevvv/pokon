@@ -1,3 +1,4 @@
+import "server-only";
 type ListOptions<Type> = { limit?: Type; offset?: Type };
 
 /**

@@ -1,6 +1,7 @@
 import { PokemonWithColor } from "@/ts/types";
 import catalogConfig from "@/catalog-config";
 import getPokemonsWithColors from "./getPokemonsWithColors";
+import "server-only";
 
 /**
  * Fetches pokemon with colors for a given page.
