@@ -34,6 +34,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary",
       creator: `@${creatorTwitterUsername}`,
+      site: `@${creatorTwitterUsername}`,
       title: `Pokémon Catalog | ${appName}`,
       description: "Explore Pokémon in a catalog-like page",
       images: [

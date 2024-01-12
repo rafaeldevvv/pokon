@@ -47,6 +47,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary",
       creator: `@${creatorTwitterUsername}`,
+      site: `@${creatorTwitterUsername}`,
       title: `Pokémon Catalog Page ${pageNumber} | ${appName}`,
       description: "Explore Pokémon in a catalog-like page",
       images: [

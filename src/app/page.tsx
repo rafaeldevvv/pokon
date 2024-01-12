@@ -3,7 +3,7 @@ import SearchFunctionality from "@/components/SearchFunctionality";
 
 const appName = process.env.APP_NAME as string,
   appDesc = process.env.APP_DESCRIPTION as string,
-  creatorTwitterUserName = process.env.CREATOR_TWITTER_USERNAME as string;
+  creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
 
 export const metadata: Metadata = {
   description: appDesc,
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    creator: `@${creatorTwitterUserName}`,
+    creator: `@${creatorTwitterUsername}`,
+    site: `@${creatorTwitterUsername}`,
     title: appName,
     description: appDesc,
     images: [
