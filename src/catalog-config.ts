@@ -3,5 +3,5 @@
  */
 
 export default {
-  itemsPerPage: 30,
+  itemsPerPage: 36,
 };

@@ -1,2 +1,3 @@
 import findPokemonColor from "./findPokemonColor";
-export { findPokemonColor };
+import generatePokemonPageThumbnail from "./generatePokemonPageThumbnail";
+export { findPokemonColor, generatePokemonPageThumbnail };

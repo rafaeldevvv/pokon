@@ -45,6 +45,7 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [How to organize TypeScript interfaces \[closed\]](https://stackoverflow.com/questions/36633033/how-to-organize-typescript-interfaces)
 - [301 vs 302 Redirect: What are the Differences Between Them?](https://rockcontent.com/blog/301-vs-302-redirect/)
 - [The 100% correct way to structure a React app (or why there’s no such thing)](https://david-gilbertson.medium.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
+- [Multi word environment variable in Dockerfile](https://stackoverflow.com/questions/59795124/multi-word-environment-variable-in-dockerfile)
 
 ## Aknowledgements
 

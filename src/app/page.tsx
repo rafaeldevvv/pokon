@@ -1,6 +1,39 @@
-"use client";
+import type { Metadata } from "next";
+import SearchFunctionality from "@/components/SearchFunctionality";
 
-import SearchForm from "@/components/SearchForm";
+const appName = process.env.APP_NAME as string,
+  appDesc = process.env.APP_DESCRIPTION as string,
+  creatorTwitterUserName = process.env.CREATOR_TWITTER_USERNAME as string;
+
+export const metadata: Metadata = {
+  description: appDesc,
+  openGraph: {
+    title: appName,
+    description: appDesc,
+    url: "",
+    siteName: appName,
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "http://localhost:3000/homepage-background.png", // absolute
+        alt: "Pokemon",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    creator: `@${creatorTwitterUserName}`,
+    title: appName,
+    description: appDesc,
+    images: [
+      {
+        url: "http://localhost:3000/homepage-background.png", //absolute
+        alt: "Pokemon",
+      },
+    ],
+  },
+};
 
 export default function Home() {
   return (
@@ -12,13 +45,7 @@ export default function Home() {
             Explore a variety of creatures, find special berries, and check out
             essential items for your journey.
           </p>
-          <SearchForm
-            label="Search Pokón"
-            searchValue=""
-            onSearch={() => {}}
-            onSearchValueChange={() => {}}
-            placeholder="Search for a pokemon, berries or items"
-          />
+          <SearchFunctionality />
         </div>
       </div>
     </div>

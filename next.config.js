@@ -12,6 +12,4 @@ const nextConfig = {
    }
 }
 
-"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-
 module.exports = nextConfig
