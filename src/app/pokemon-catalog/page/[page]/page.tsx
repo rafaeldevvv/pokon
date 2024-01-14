@@ -20,10 +20,6 @@ export async function generateMetadata({
   const { page } = params;
   const pageNumber = Number(page);
 
-  const numPokemons = await getPokemonCount();
-  const numPages = getNumberOfPages(numPokemons);
-  checkPageNumber(pageNumber, numPages, "/pokemon-catalog");
-
   const pokemons = await getPokemonsForPage(pageNumber);
   const names = pokemons.map((p) => p.name);
 
@@ -39,7 +35,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "http://localhost:3000/homepage-background.png", // absolute
+          url: `/pokemon-catalog/page/${pageNumber}/thumbnail`, // absolute
           alt: "Pokemon",
         },
       ],
@@ -52,7 +48,7 @@ export async function generateMetadata({
       description: "Explore Pokémon in a catalog-like page",
       images: [
         {
-          url: "http://localhost:3000/homepage-background.png", //absolute
+          url: `/pokemon-catalog/page/${pageNumber}/thumbnail`, //absolute
           alt: "Pokemon",
         },
       ],
@@ -63,11 +59,12 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: PokemonPageParams }) {
   const page = Number(params.page);
 
-  const numPokemons = await getPokemonCount();
+  const [numPokemons, pokemons] = await Promise.all([
+    getPokemonCount(),
+    getPokemonsForPage(page),
+  ]);
   const numPages = getNumberOfPages(numPokemons);
-  checkPageNumber(page, numPages, "/pokemon-catalog");
-
-  const pokemons = await getPokemonsForPage(page);
+  checkPageNumber(page, numPages);
 
   return (
     <CatalogSection label="Pokemon List">

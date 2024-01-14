@@ -9,6 +9,15 @@ const nextConfig = {
             pathname: "/**"
          }
       ]
+   },
+   async redirects() {
+      return [
+         {
+            source: "/:catalog/page/1",
+            destination: "/:catalog",
+            permanent: true
+         }
+      ]
    }
 }
 

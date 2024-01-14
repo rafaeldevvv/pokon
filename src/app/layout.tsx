@@ -10,6 +10,7 @@ const appName = process.env.APP_NAME as string,
   creatorName = process.env.CREATOR_NAME as string;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: { default: `${appName}`, template: `%s | ${appName}` },
   authors: [
     { name: creatorName, url: "https://rafaeldevvv.github.io/portfolio" },

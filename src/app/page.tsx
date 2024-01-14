@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "http://localhost:3000/homepage-background.png", // absolute
+        url: "/homepage-background.png", // absolute
         alt: "Pokemon",
       },
     ],
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: appDesc,
     images: [
       {
-        url: "http://localhost:3000/homepage-background.png", //absolute
+        url: "/homepage-background.png", //absolute
         alt: "Pokemon",
       },
     ],
