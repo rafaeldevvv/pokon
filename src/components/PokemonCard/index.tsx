@@ -33,7 +33,7 @@ export function PokemonSprite({
   name: string;
   color: string;
   sprite: null | string;
-}) {
+}) {/* 
   const img =
     sprite === null ? (
       <div className="h-[100px] flex place-items-center text-center">
@@ -48,7 +48,7 @@ export function PokemonSprite({
         height="100"
         className="mx-auto"
       />
-    );
+    ); */
 
   const gradientStyles =
     sprite !== null
@@ -57,13 +57,21 @@ export function PokemonSprite({
         }
       : undefined;
 
+  const src = sprite || "/unknown-pokemon.png";
+
   return (
     <div className="relative z-0 py-4">
       <div
         className="absolute inset-0 opacity-50 z-[-1]"
         style={gradientStyles}
       />
-      {img}
+      <Image
+        src={src}
+        alt={name}
+        width="100"
+        height="100"
+        className="mx-auto"
+      />
     </div>
   );
 }
