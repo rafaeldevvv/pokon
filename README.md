@@ -53,6 +53,7 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [How do I get the image pixel in JavaScript?](https://www.quora.com/How-do-I-get-the-image-pixel-in-JavaScript#:~:text=To%20get%20the%20pixel%20value,property%20of%20the%20ImageData%20object.)
 - [codepen](https://codepen.io/)
 - [Image Resizer](https://imageresizer.com)
+- [conventional-commit-types](https://github.com/pvdlg/conventional-commit-types)
 
 ## Aknowledgements
 

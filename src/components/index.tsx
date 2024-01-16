@@ -8,6 +8,9 @@ import Pagination from "./Pagination";
 import PokemonCard from "./PokemonCard";
 import PokemonList from "./PokemonList";
 import CatalogSection from "./CatalogSection";
+import NotFoundTitle from "./NotFoundTitle";
+import NotFoundLink from "./NotFoundLink";
+import PokemonCatalogNotFoundForm from "./PokemonCatalogNotFoundForm";
 
 export {
   CatalogHeader,
@@ -19,5 +22,8 @@ export {
   Pagination,
   PokemonCard,
   PokemonList,
-  CatalogSection
+  CatalogSection,
+  NotFoundTitle,
+  NotFoundLink,
+  PokemonCatalogNotFoundForm
 };

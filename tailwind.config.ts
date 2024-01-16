@@ -24,11 +24,8 @@ const config: Config = {
         body: ["var(--ff-mono-body)", ...defaultTheme.fontFamily.mono],
         title: ["var(--ff-mono-title)", ...defaultTheme.fontFamily.mono],
       },
-      transitionProperty: {
-        "size": "height, width, transform"
-      },
       gridTemplateRows: {
-        'global-layout': 'max-content 1fr  max-content'
+        'global-layout': 'max-content 1fr max-content'
       },
       spacing: {
         'header': '83px'

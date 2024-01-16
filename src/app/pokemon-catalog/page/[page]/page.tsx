@@ -6,6 +6,7 @@ import {
   getPokemonsForPage,
 } from "@/data-fetching/pokemon";
 import { keywords as sharedKeywords } from "@/app/shared-metadata";
+import { notFound } from "next/navigation";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
@@ -63,7 +64,8 @@ export default async function Page({ params }: { params: PokemonPageParams }) {
     getPokemonsForPage(page),
   ]);
   const numPages = getNumberOfPages(numPokemons);
-  checkPageNumber(page, numPages);
+  const invalid = checkPageNumber(page, numPages);
+  if (invalid) notFound();
 
   return (
     <CatalogSection label="Pokemon List">
