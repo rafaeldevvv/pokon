@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getPokemonsForPage } from "@/data-fetching/pokemon";
 import { CatalogSection, PokemonList } from "@/components";
-import { keywords } from "../shared-metadata";
+import { keywords as sharedKeywords } from "../shared-metadata";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
@@ -13,7 +13,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Pokémon Catalog",
     description: "Explore Pokémon in a catalog-like page",
-    keywords: [...names, ...keywords],
+    keywords: [...names, ...sharedKeywords],
     openGraph: {
       title: `Pokémon Catalog | ${appName}`,
       description: "Explore Pokémon in a catalog-like page",

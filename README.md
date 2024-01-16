@@ -46,6 +46,13 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [301 vs 302 Redirect: What are the Differences Between Them?](https://rockcontent.com/blog/301-vs-302-redirect/)
 - [The 100% correct way to structure a React app (or why there’s no such thing)](https://david-gilbertson.medium.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
 - [Multi word environment variable in Dockerfile](https://stackoverflow.com/questions/59795124/multi-word-environment-variable-in-dockerfile)
+- [vercel OG Image Playground](https://og-playground.vercel.app) - Useful to generate of images.
+- [Open Graph (OG) Image Generation](https://vercel.com/docs/functions/edge-functions/og-image-generation) - Awesome docs for generating og images.
+- [What is the purpose of application-name and keywords in meta tag?](https://stackoverflow.com/questions/24721130/what-is-the-purpose-of-application-name-and-keywords-in-meta-tag)
+- [Your Guide to Fixing the 405 Method Not Allowed Error](https://www.dreamhost.com/blog/fixing-the-405-error/)
+- [How do I get the image pixel in JavaScript?](https://www.quora.com/How-do-I-get-the-image-pixel-in-JavaScript#:~:text=To%20get%20the%20pixel%20value,property%20of%20the%20ImageData%20object.)
+- [codepen](https://codepen.io/)
+- [Image Resizer](https://imageresizer.com)
 
 ## Aknowledgements
 

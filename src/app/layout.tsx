@@ -7,10 +7,11 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 
 const appName = process.env.APP_NAME as string,
-  creatorName = process.env.CREATOR_NAME as string;
+  creatorName = process.env.CREATOR_NAME as string,
+  baseUrl = process.env.BASE_URL as string;
 
 export const metadata: Metadata = {
-  metadataBase: new URL("http://localhost:3000"),
+  metadataBase: new URL(baseUrl),
   title: { default: `${appName}`, template: `%s | ${appName}` },
   authors: [
     { name: creatorName, url: "https://rafaeldevvv.github.io/portfolio" },

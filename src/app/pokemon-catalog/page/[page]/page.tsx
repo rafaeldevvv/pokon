@@ -5,13 +5,12 @@ import {
   getCount as getPokemonCount,
   getPokemonsForPage,
 } from "@/data-fetching/pokemon";
-import { keywords } from "@/app/shared-metadata";
-
-type PokemonPageParams = { page: string };
+import { keywords as sharedKeywords } from "@/app/shared-metadata";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
 
+type PokemonPageParams = { page: string };
 export async function generateMetadata({
   params,
 }: {
@@ -25,7 +24,7 @@ export async function generateMetadata({
 
   return {
     title: `Pokémon Catalog Page ${pageNumber}`,
-    keywords: [...names, ...keywords],
+    keywords: [...names, ...sharedKeywords],
     openGraph: {
       title: `Pokémon Catalog Page ${pageNumber} | ${appName}`,
       description: "Explore Pokémon in a catalog-like page",
