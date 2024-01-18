@@ -10,6 +10,8 @@ export default function PokemonPagination({
 }) {
   const segments = useSelectedLayoutSegments();
   const [_, page] = segments;
+  /* if there are no segments, i.e. we're at /pokemon-catalog
+  then the page is 1 */
   const currentPage = segments.length === 0 ? 1 : Number(page);
 
   return (
