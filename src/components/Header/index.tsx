@@ -107,7 +107,7 @@ export function PrimaryNavigation({ isExpanded }: { isExpanded: boolean }) {
         let activeStyles = "";
         if ("/" + activeSegment === path)
           activeStyles +=
-            "relative text-red-600 after:absolute after:top-full after:inset-x-2 after:h-0.5 after:bg-red-600";
+            "relative text-red-600 md:after:absolute md:after:top-full md:after:inset-x-2 md:after:h-0.5 md:after:bg-red-600 border-r-red-600";
         return (
           <li key={path} className="text-right">
             <Link
