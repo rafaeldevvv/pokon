@@ -1,12 +1,13 @@
 import { Metadata } from "next";
-import { CatalogSection, PokemonList } from "@/components";
+import { CatalogSection, PokemonList, CatalogListSkeleton } from "@/components";
 import { checkPageNumber, getNumberOfPages } from "@/utils/common";
 import {
   getCount as getPokemonCount,
-  getPokemonsForPage,
+  listPokemonsForPage,
 } from "@/data-fetching/pokemon";
 import { keywords as sharedKeywords } from "@/app/shared-metadata";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
@@ -20,8 +21,8 @@ export async function generateMetadata({
   const { page } = params;
   const pageNumber = Number(page);
 
-  const pokemons = await getPokemonsForPage(pageNumber);
-  const names = pokemons.map((p) => p.name);
+  const { results } = await listPokemonsForPage(pageNumber);
+  const names = results.map((p) => p.name);
 
   return {
     title: `Pokémon Catalog Page ${pageNumber}`,
@@ -59,17 +60,20 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: PokemonPageParams }) {
   const page = Number(params.page);
 
-  const [numPokemons, pokemons] = await Promise.all([
+  const [numPokemons, { results }] = await Promise.all([
     getPokemonCount(),
-    getPokemonsForPage(page),
+    listPokemonsForPage(page),
   ]);
+
   const numPages = getNumberOfPages(numPokemons);
   const invalid = checkPageNumber(page, numPages);
   if (invalid) notFound();
 
   return (
     <CatalogSection label="Pokemon List">
-      <PokemonList pokemons={pokemons} />
+      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+        <PokemonList page={page} />
+      </Suspense>
     </CatalogSection>
   );
 }

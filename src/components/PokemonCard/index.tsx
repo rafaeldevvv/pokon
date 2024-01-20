@@ -1,13 +1,16 @@
 import Image from "next/image";
 import type { PokemonWithColor, PokemonStat } from "@/ts/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBan } from "@fortawesome/free-solid-svg-icons";
+import CatalogCard from "../CatalogCard/index.";
 
-export default function PokemonCard({ pokemon }: { pokemon: PokemonWithColor }) {
+export default function PokemonCard({
+  pokemon,
+}: {
+  pokemon: PokemonWithColor;
+}) {
   const sprite = pokemon.sprites.front_default;
 
   return (
-    <div className="border border-solid border-black h-full">
+    <CatalogCard>
       <PokemonSprite
         name={pokemon.name}
         sprite={sprite}
@@ -21,7 +24,7 @@ export default function PokemonCard({ pokemon }: { pokemon: PokemonWithColor }) 
       <div className="px-2 py-3">
         <PokemonStats stats={pokemon.stats} />
       </div>
-    </div>
+    </CatalogCard>
   );
 }
 
@@ -33,23 +36,7 @@ export function PokemonSprite({
   name: string;
   color: string;
   sprite: null | string;
-}) {/* 
-  const img =
-    sprite === null ? (
-      <div className="h-[100px] flex place-items-center text-center">
-        <FontAwesomeIcon icon={faBan} size="5x" className="block mx-auto" />
-        <span className="sr-only">Sorry, there's no image for {name}</span>
-      </div>
-    ) : (
-      <Image
-        src={sprite}
-        alt={name}
-        width="100"
-        height="100"
-        className="mx-auto"
-      />
-    ); */
-
+}) {
   const gradientStyles =
     sprite !== null
       ? {
@@ -70,7 +57,7 @@ export function PokemonSprite({
         alt={name}
         width="100"
         height="100"
-        className="mx-auto"
+        className="mx-auto h-[100px]"
       />
     </div>
   );
@@ -84,9 +71,7 @@ export function PokemonStats({ stats }: { stats: PokemonStat[] }) {
         const baseState = stat.base_stat;
         return (
           <li key={stat.stat.name}>
-            {name.toUpperCase().replaceAll("-", " ")}
-            {' '}
-            {baseState}
+            {name.toUpperCase().replaceAll("-", " ")} {baseState}
           </li>
         );
       })}

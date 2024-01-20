@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { getPokemonsForPage } from "@/data-fetching/pokemon";
-import { CatalogSection, PokemonList } from "@/components";
+import { listPokemonsForPage } from "@/data-fetching/pokemon";
+import { CatalogSection, CatalogListSkeleton, PokemonList } from "@/components";
 import { keywords as sharedKeywords } from "../shared-metadata";
+import { Suspense } from "react";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const pokemons = await getPokemonsForPage(1);
-  const names = pokemons.map((p) => p.name);
+  const { results } = await listPokemonsForPage(1);
+  const names = results.map((p) => p.name);
 
   return {
     title: "Pokémon Catalog",
@@ -45,11 +46,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PokemonCatalog() {
-  const pokemons = await getPokemonsForPage(1);
-
+  const { results } = await listPokemonsForPage(1);
   return (
     <CatalogSection label="Pokemon list">
-      <PokemonList pokemons={pokemons} />
+      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+        <PokemonList page={1} />
+      </Suspense>
     </CatalogSection>
   );
 }

@@ -11,6 +11,8 @@ import CatalogSection from "./CatalogSection";
 import NotFoundTitle from "./NotFoundTitle";
 import NotFoundLink from "./NotFoundLink";
 import PokemonCatalogNotFoundForm from "./PokemonCatalogNotFoundForm";
+import CatalogListSkeleton from "./CatalogListSkeleton";
+import CardSkeleton from "./CardSkeleton";
 
 export {
   CatalogHeader,
@@ -25,5 +27,7 @@ export {
   CatalogSection,
   NotFoundTitle,
   NotFoundLink,
-  PokemonCatalogNotFoundForm
+  PokemonCatalogNotFoundForm,
+  CardSkeleton,
+  CatalogListSkeleton,
 };

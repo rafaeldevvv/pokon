@@ -3,7 +3,7 @@
 [![Framework](https://img.shields.io/badge/framework-next.js-cornflowerblue.svg?style=flat)](https://nextjs.org/)
 [![Language](https://img.shields.io/badge/language-typescript-darkblue.svg?style=flat)](https://www.typescriptlang.org/)
 
-Pokon is a fan-made website showcasing part of the pokemon data available in the [PokeAPI](https://pokeapi.co/).
+Pokón is a fan-made website showcasing part of the Pokémon data available in the [PokéAPI](https://pokeapi.co/).
 
 ## Table of contents
 
@@ -54,6 +54,8 @@ Pokon is a fan-made website showcasing part of the pokemon data available in the
 - [codepen](https://codepen.io/)
 - [Image Resizer](https://imageresizer.com)
 - [conventional-commit-types](https://github.com/pvdlg/conventional-commit-types)
+- [How to properly use Git and branches](https://stackoverflow.com/questions/10009175/how-to-properly-use-git-and-branches)
+- [How to Vertically Align Text Next to an Image using CSS ?](https://geeksforgeeks.org/how-to-vertically-align-text-next-to-an-image-using-css/)
 
 ## Aknowledgements
 

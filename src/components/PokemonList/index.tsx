@@ -1,11 +1,9 @@
-import type { PokemonWithColor } from "@/ts/types";
 import { PokemonCard } from "@/components";
+import { getPokemonsForPage } from "@/data-fetching/pokemon";
 
-export default function PokemonList({
-  pokemons,
-}: {
-  pokemons: PokemonWithColor[];
-}) {
+export default async function PokemonList({ page }: { page: number }) {
+  const pokemons = await getPokemonsForPage(page);
+
   return (
     <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 items-stretch justify-center gap-x-3 gap-y-6">
       {pokemons.map((p, i) => {
