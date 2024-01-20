@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { NextApiRequest } from "next";
+import { NextRequest } from "next/server";
 import { getPokemonsForPage } from "@/data-fetching/pokemon";
 
 export const runtime = "edge";
@@ -7,7 +7,7 @@ export const runtime = "edge";
 const defaultPokemonSprite = "http://localhost:3000/unknown-pokemon.png";
 
 export async function GET(
-  request: NextApiRequest,
+  request: NextRequest,
   context: { params: { page: string } }
 ) {
   const page = Number(context.params.page);

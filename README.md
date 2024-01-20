@@ -56,6 +56,7 @@ Pokón is a fan-made website showcasing part of the Pokémon data available in t
 - [conventional-commit-types](https://github.com/pvdlg/conventional-commit-types)
 - [How to properly use Git and branches](https://stackoverflow.com/questions/10009175/how-to-properly-use-git-and-branches)
 - [How to Vertically Align Text Next to an Image using CSS ?](https://geeksforgeeks.org/how-to-vertically-align-text-next-to-an-image-using-css/)
+- [](https://nvie.com/posts/a-successful-git-branching-model/)
 
 ## Aknowledgements
 

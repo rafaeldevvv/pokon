@@ -27,6 +27,6 @@ export default function fetchPokeApiData(
   }
 
   return fetch(`https://pokeapi.co/api/v2/${path}/${queryString}`, {
-    next: { revalidate: 0 }, // revalidate the data every week #################### => 60 * 60 * 24 * 7
+    next: { revalidate: 60 * 60 * 24 * 7 }, // revalidate the data every week
   }).then((res) => res.json());
 }
