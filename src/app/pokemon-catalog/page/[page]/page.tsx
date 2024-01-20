@@ -30,7 +30,7 @@ export async function generateMetadata({
     openGraph: {
       title: `Pokémon Catalog Page ${pageNumber} | ${appName}`,
       description: "Explore Pokémon in a catalog-like page",
-      url: "",
+      url: `/pokemon-catalog/page/${pageNumber}`,
       siteName: appName,
       locale: "en_US",
       type: "website",

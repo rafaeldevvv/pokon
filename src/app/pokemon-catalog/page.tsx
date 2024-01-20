@@ -18,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: `Pokémon Catalog | ${appName}`,
       description: "Explore Pokémon in a catalog-like page",
-      url: "",
+      url: "/pokemon-catalog",
       siteName: appName,
       locale: "en_US",
       type: "website",

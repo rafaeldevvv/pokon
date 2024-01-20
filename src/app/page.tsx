@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: appName,
     description: appDesc,
-    url: "",
+    url: "/",
     siteName: appName,
     locale: "en_US",
     type: "website",
