@@ -4,7 +4,8 @@ import { getPokemonsForPage } from "@/data-fetching/pokemon";
 
 export const runtime = "edge";
 
-const defaultPokemonSprite = "http://localhost:3000/unknown-pokemon.png";
+const baseUrl = process.env.BASE_URL;
+const defaultPokemonSprite = baseUrl + "/unknown-pokemon.png";
 
 export async function GET(
   request: NextRequest,
