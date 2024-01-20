@@ -56,7 +56,11 @@ Pokón is a fan-made website showcasing part of the Pokémon data available in t
 - [conventional-commit-types](https://github.com/pvdlg/conventional-commit-types)
 - [How to properly use Git and branches](https://stackoverflow.com/questions/10009175/how-to-properly-use-git-and-branches)
 - [How to Vertically Align Text Next to an Image using CSS ?](https://geeksforgeeks.org/how-to-vertically-align-text-next-to-an-image-using-css/)
-- [](https://nvie.com/posts/a-successful-git-branching-model/)
+- [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [Git for beginners: The definitive practical guide](https://stackoverflow.com/questions/315911/git-for-beginners-the-definitive-practical-guide)
+- [GitHub flow](https://docs.github.com/en/get-started/using-github/github-flow)
+- [eslint-plugin-jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+- [open-sauced/app](https://github.com/open-sauced/app)
 
 ## Aknowledgements
 
