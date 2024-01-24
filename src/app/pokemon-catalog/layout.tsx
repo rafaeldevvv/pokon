@@ -1,14 +1,14 @@
 import CatalogHeader from "@/components/CatalogHeader";
-import PokemonPagination from "@/components/PokemonPagination";
+import { CatalogPagination } from "@/components";
 import { getNumberOfPages } from "@/utils/common";
-import { getCount } from "@/data-fetching/pokemon"
+import { getCount as getPokemonCount } from "@/data-fetching/pokemon";
 
 export default async function CatalogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const total = await getCount();
+  const total = await getPokemonCount();
   const pages = getNumberOfPages(total);
 
   return (
@@ -21,7 +21,7 @@ export default async function CatalogLayout({
         />
         {children}
       </article>
-      <PokemonPagination totalPages={pages} />
+      <CatalogPagination totalPages={pages} baseUrl="/pokemon-catalog/" />
     </div>
   );
 }
