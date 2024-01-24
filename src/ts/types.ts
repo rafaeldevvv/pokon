@@ -7,4 +7,8 @@ import type { Pokemon, PokemonColor } from "pokenode-ts";
 
 export type PokemonWithColor = Pokemon & { color: PokemonColor["name"] };
 
+export interface CatalogPageParams {
+   page: string;
+}
+
 export type * from "pokenode-ts";

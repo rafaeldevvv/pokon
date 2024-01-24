@@ -10,7 +10,7 @@ export default function PokemonPagination({
 }) {
   const segments = useSelectedLayoutSegments();
   const [_, page] = segments;
-  /* if we're at /pokemon-catalog or /pokemon-catalog/page
+  /* if we're at /items-catalog or /items-catalog/page
   then the page is 1 */
   const currentPage = segments.length <= 1 ? 1 : Number(page);
 
@@ -18,7 +18,7 @@ export default function PokemonPagination({
     <Pagination
       current={currentPage}
       total={totalPages}
-      baseUrl={"/pokemon-catalog/"}
+      baseUrl={"/items-catalog/"}
     />
   );
 }

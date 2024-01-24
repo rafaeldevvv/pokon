@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { PokemonWithColor, PokemonStat } from "@/ts/types";
-import CatalogCard from "../CatalogCard/index.";
+import CatalogCard from "../CatalogCard";
 
 export default function PokemonCard({
   pokemon,

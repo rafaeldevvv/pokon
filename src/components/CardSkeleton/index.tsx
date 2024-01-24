@@ -1,4 +1,4 @@
-import CatalogCard from "../CatalogCard/index.";
+import CatalogCard from "../CatalogCard";
 
 export default function LoadingCard() {
   return (

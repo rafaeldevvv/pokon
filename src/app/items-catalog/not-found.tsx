@@ -1,5 +1,5 @@
 import { NotFoundTitle } from "@/components";
-import { getCount } from "@/data-fetching/pokemon";
+import { getCount } from "@/data-fetching/items";
 import { getNumberOfPages } from "@/utils/common";
 import { NotFoundForm } from "@/components";
 
@@ -14,7 +14,7 @@ export default async function PageNotFound() {
         The page you're looking for is not available. Which page would you like
         to see?
       </p>
-      <NotFoundForm numOfPages={pages} baseUrl="/pokemon-catalog/" />
+      <NotFoundForm numOfPages={pages} baseUrl="/items-catalog/" />
     </div>
   );
 }

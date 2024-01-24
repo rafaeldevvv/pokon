@@ -11,10 +11,17 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 
-export default function PokemonCatalogNotFoundForm({
+export default function NotFoundForm({
   numOfPages,
+  baseUrl,
 }: {
   numOfPages: number;
+  /**
+   * A base url from the root. It has to end with a forward slash.
+   *
+   * @example "/catalog/"
+   * */
+  baseUrl: string;
 }) {
   const router = useRouter();
   const [page, setPage] = useState("");
@@ -36,7 +43,7 @@ export default function PokemonCatalogNotFoundForm({
       } else if (input.validity.stepMismatch) {
         setError(`Page must be an integer between 1 and ${numOfPages}`);
       } else {
-        router.replace("/pokemon-catalog/page/" + page);
+        router.replace(baseUrl + "page/" + page);
       }
     },
     [page, numOfPages]
