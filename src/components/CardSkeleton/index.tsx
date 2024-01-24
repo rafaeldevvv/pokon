@@ -1,6 +1,6 @@
 import CatalogCard from "../CatalogCard";
 
-export default function LoadingCard() {
+export default function CardSkeleton() {
   return (
     <CatalogCard>
       <span className="sr-only">Loading item</span>
