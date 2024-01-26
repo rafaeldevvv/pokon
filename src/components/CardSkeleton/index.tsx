@@ -13,9 +13,9 @@ export default function CardSkeleton() {
       <div className="px-2 py-4">
         {Array(3)
           .fill(null)
-          .map(() => {
+          .map((_, i) => {
             return (
-              <div className="max-w-full w-32 h-4 bg-gray-300 animate-pulse rounded mb-4" />
+              <div className="max-w-full w-32 h-4 bg-gray-300 animate-pulse rounded mb-4" key={i} />
             );
           })}
       </div>
