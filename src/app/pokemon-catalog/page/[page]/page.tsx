@@ -37,7 +37,7 @@ export async function generateMetadata({
       images: [
         {
           url: `/pokemon-catalog/page/${pageNumber}/thumbnail`, // absolute
-          alt: "Pokemon",
+          alt: `Pokémon for page ${pageNumber}`,
         },
       ],
     },
@@ -50,7 +50,7 @@ export async function generateMetadata({
       images: [
         {
           url: `/pokemon-catalog/page/${pageNumber}/thumbnail`, //absolute
-          alt: "Pokemon",
+          alt: `Pokémon for page ${pageNumber}`,
         },
       ],
     },

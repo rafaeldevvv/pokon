@@ -11,10 +11,17 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 
-export default function PokemonCatalogNotFoundForm({
+export default function NotFoundForm({
   numOfPages,
+  baseUrl,
 }: {
   numOfPages: number;
+  /**
+   * A base url from the root. It has to end with a forward slash.
+   *
+   * @example "/catalog/"
+   * */
+  baseUrl: string;
 }) {
   const router = useRouter();
   const [page, setPage] = useState("");
@@ -36,10 +43,10 @@ export default function PokemonCatalogNotFoundForm({
       } else if (input.validity.stepMismatch) {
         setError(`Page must be an integer between 1 and ${numOfPages}`);
       } else {
-        router.replace("/pokemon-catalog/page/" + page);
+        router.replace(baseUrl + "page/" + page);
       }
     },
-    [page, numOfPages]
+    [page, numOfPages, baseUrl, router]
   );
 
   const handleChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
@@ -70,50 +77,48 @@ export default function PokemonCatalogNotFoundForm({
   );
 }
 
-export const PageInput = forwardRef(
-  (
-    {
-      error,
-      max,
-      value,
-      onChange,
-    }: {
-      error: null | string;
-      max: number;
-      value: string;
-      onChange(e: ChangeEvent<HTMLInputElement>): void;
-    },
-    ref: ForwardedRef<HTMLInputElement>
-  ) => {
-    return (
-      <label htmlFor="page">
-        <span className="sr-only">Page from 1 to {max} (required)</span>
-        <input
-          type="number"
-          value={value}
-          id="page"
-          onChange={onChange}
-          required
-          min="1"
-          max={max}
-          placeholder={`1 to ${max}`}
-          className="block p-2 w-40 max-w-full border border-solid border-black"
-          ref={ref}
-        />
-        <span
-          aria-live="polite"
-          className={
-            error
-              ? "absolute top-[105%] left-0 bg-red-600 text-white p-2 text-sm"
-              : ""
-          }
-        >
-          {error}
-        </span>
-      </label>
-    );
-  }
-);
+export const PageInput = forwardRef(function PageInput(
+  {
+    error,
+    max,
+    value,
+    onChange,
+  }: {
+    error: null | string;
+    max: number;
+    value: string;
+    onChange(e: ChangeEvent<HTMLInputElement>): void;
+  },
+  ref: ForwardedRef<HTMLInputElement>
+) {
+  return (
+    <label htmlFor="page">
+      <span className="sr-only">Page from 1 to {max} (required)</span>
+      <input
+        type="number"
+        value={value}
+        id="page"
+        onChange={onChange}
+        required
+        min="1"
+        max={max}
+        placeholder={`1 to ${max}`}
+        className="block p-2 w-40 max-w-full border border-solid border-black"
+        ref={ref}
+      />
+      <span
+        aria-live="polite"
+        className={
+          error
+            ? "absolute top-[105%] left-0 bg-red-600 text-white p-2 text-sm"
+            : ""
+        }
+      >
+        {error}
+      </span>
+    </label>
+  );
+});
 
 export function SubmitButton() {
   return (

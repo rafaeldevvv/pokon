@@ -1,6 +1,6 @@
-import CatalogCard from "../CatalogCard/index.";
+import CatalogCard from "../CatalogCard";
 
-export default function LoadingCard() {
+export default function CardSkeleton() {
   return (
     <CatalogCard>
       <span className="sr-only">Loading item</span>
@@ -13,9 +13,9 @@ export default function LoadingCard() {
       <div className="px-2 py-4">
         {Array(3)
           .fill(null)
-          .map(() => {
+          .map((_, i) => {
             return (
-              <div className="max-w-full w-32 h-4 bg-gray-300 animate-pulse rounded mb-4" />
+              <div className="max-w-full w-32 h-4 bg-gray-300 animate-pulse rounded mb-4" key={i} />
             );
           })}
       </div>

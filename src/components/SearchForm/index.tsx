@@ -19,7 +19,9 @@ export default function SearchForm({
   classes?: string;
 }) {
   return (
-    <form role="search" className={`relative flex items-center ${classes}`}>
+    <form role="search" className={`relative flex items-center ${classes}`} onSubmit={() => {
+      onSearch();
+    }}>
       <label htmlFor="search-input" id="search-input-label" className="sr-only">
         {label}
       </label>

@@ -6,10 +6,10 @@ export default function NotFound() {
       <div className="py-32 px-4">
         <NotFoundTitle />
         <p className="mb-4">
-          The resource you're looking for is not available. Would you like to go
+          The resource you&apos;re looking for is not available. Would you like to go
           to the homepage?
         </p>
-        <NotFoundLink href="/">Let's go home</NotFoundLink>
+        <NotFoundLink href="/">Let&apos;s go home</NotFoundLink>
       </div>
     </div>
   );

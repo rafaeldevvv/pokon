@@ -10,9 +10,10 @@ import PokemonList from "./PokemonList";
 import CatalogSection from "./CatalogSection";
 import NotFoundTitle from "./NotFoundTitle";
 import NotFoundLink from "./NotFoundLink";
-import PokemonCatalogNotFoundForm from "./PokemonCatalogNotFoundForm";
+import NotFoundForm from "./NotFoundForm";
 import CatalogListSkeleton from "./CatalogListSkeleton";
 import CardSkeleton from "./CardSkeleton";
+import CatalogPagination from "./CatalogPagination";
 
 export {
   CatalogHeader,
@@ -27,7 +28,8 @@ export {
   CatalogSection,
   NotFoundTitle,
   NotFoundLink,
-  PokemonCatalogNotFoundForm,
+  NotFoundForm,
   CardSkeleton,
   CatalogListSkeleton,
+  CatalogPagination,
 };
