@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/homepage-background.png", // absolute
-        alt: "Pokemon",
+        alt: appName,
       },
     ],
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/homepage-background.png", //absolute
-        alt: "Pokemon",
+        alt: appName,
       },
     ],
   },

@@ -24,8 +24,8 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [
         {
-          url: "/pokemon-catalog/page/1/thumbnail", // absolute
-          alt: "Pokemon",
+          url: "/pokemon-catalog/page/1/thumbnail",
+          alt: "Pokémon for page 1",
         },
       ],
     },
@@ -37,8 +37,8 @@ export async function generateMetadata(): Promise<Metadata> {
       description: "Explore Pokémon in a catalog-like page",
       images: [
         {
-          url: "/pokemon-catalog/page/1/thumbnail", //absolute
-          alt: "Pokemon",
+          url: "/pokemon-catalog/page/1/thumbnail",
+          alt: "Pokémon for page 1",
         },
       ],
     },

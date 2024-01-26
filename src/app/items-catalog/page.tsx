@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: "/items-catalog/page/1/thumbnail",
-          alt: `Items for the first catalog page in ${appName}`,
+          alt: `Items for page 1`,
         },
       ],
     },
@@ -42,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url: "/items-catalog/page/1/thumbnail",
-          alt: `Items for the first catalog page in ${appName}`,
+          alt: `Items for page 1`,
         },
       ],
     },

@@ -33,14 +33,14 @@ export async function generateMetadata({
     openGraph: {
       title: `Items Catalog Page ${page} | ${appName}`,
       description: description,
-      url: "/items-catalog/page/" + page,
+      url: `/items-catalog/page/${page}`,
       siteName: appName,
       locale: "en_US",
       type: "website",
       images: [
         {
           url: `/items-catalog/page/${page}/thumbnail`,
-          alt: `Items for the first catalog page in ${appName}`,
+          alt: `Items for page ${page}`,
         },
       ],
     },
@@ -53,7 +53,7 @@ export async function generateMetadata({
       images: [
         {
           url: `/items-catalog/page/${page}/thumbnail`,
-          alt: `Items for the catalog page ${page} in ${appName}`,
+          alt: `Items for page ${page}`,
         },
       ],
     },
