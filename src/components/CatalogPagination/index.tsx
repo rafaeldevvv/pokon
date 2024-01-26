@@ -28,7 +28,7 @@ export default function CatalogPagination({
   baseUrl: string;
 }) {
   const segments = useSelectedLayoutSegments();
-  const [_, page] = segments;
+  const page = segments[1];
   const pageNumber = segments.length === 0 ? 1 : Number(page);
 
   return (

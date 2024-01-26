@@ -12,14 +12,14 @@ export default function Error({
 }) {
   useEffect(() => {
     console.log(error);
-  }, []);
+  }, [error]);
 
   return (
     <div className="max-w-lg mx-auto pt-header text-center">
       <div className="py-32 px-4">
         <h1 className="font-title text-6xl">Unexpected error</h1>
         <p className="mb-4">
-          Sorry, an unexpected error occurred, if trying again doesn't solve the
+          Sorry, an unexpected error occurred, if trying again doesn&apos;t solve the
           problem, please{" "}
           <Link
             href="mailto:rafaeldeveloperr@gmail.com"

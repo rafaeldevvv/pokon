@@ -20,6 +20,8 @@ export default async function createImagesGrid(sources: string[]) {
         }}
       >
         {sources.map((s) => (
+          // disable eslint here because i don't need to add an alt, neither to use next.js Image component
+          // eslint-disable-next-line
           <img src={s} style={{ width: "100px", height: "100px" }} key={s} />
         ))}
       </div>

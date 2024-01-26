@@ -2,6 +2,8 @@
  * @file Manages the configuration of the catalogs for the website.
  */
 
-export default {
+const config = {
   itemsPerPage: 25,
 };
+
+export default config;
