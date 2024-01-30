@@ -10,6 +10,7 @@ export interface CatalogPageParams {
   page: string;
 }
 
+/** Pokemon stat names. */
 export type StatNames =
   | "hp"
   | "attack"
@@ -20,8 +21,14 @@ export type StatNames =
   | "accuracy"
   | "evasion";
 
+/** Pokemon stat names that are shown in pokemon cards. */
 export type ShownStatNames = "hp" | "attack" | "speed" | "defense";
 
+/**
+ * An object mapping stat names to stat values.
+ * Each value might be undefined because the information
+ * about the stat might not be available.
+ */
 export type BaseStats = {
   [Name in StatNames]: number | undefined;
 };
