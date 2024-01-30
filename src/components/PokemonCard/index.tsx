@@ -22,18 +22,20 @@ export default function PokemonCard({
 
   return (
     <CatalogCard>
-      <PokemonSprite
-        name={pokemon.name}
-        sprite={sprite}
-        color={pokemon.color}
-      />
-      <div className="border-y border-solid border-black py-2 px-2">
-        <h3 className="capitalize text-center leading-none font-title text-2xl">
-          {pokemon.name.replaceAll("-", " ")}
-        </h3>
-      </div>
-      <div className="px-2 py-3">
-        <PokemonStats stats={pokemon.stats} maxBaseStat={maxBaseStat} />
+      <div className="grid grid-rows-[max-content_1fr_max-content] h-full">
+        <PokemonSprite
+          name={pokemon.name}
+          sprite={sprite}
+          color={pokemon.color}
+        />
+        <div className="border-y border-solid border-black py-2 px-2 flex items-center">
+          <h3 className="capitalize text-center leading-none font-title text-2xl mx-auto">
+            {pokemon.name.replaceAll("-", " ")}
+          </h3>
+        </div>
+        <div className="px-2 py-3">
+          <PokemonStats stats={pokemon.stats} maxBaseStat={maxBaseStat} />
+        </div>
       </div>
     </CatalogCard>
   );
@@ -91,7 +93,7 @@ export function PokemonStats({
         const statValue = baseStats[statName];
         if (!statValue) return null;
         return (
-          <li key={statName} >
+          <li key={statName}>
             <StatIndicator
               statValue={statValue}
               maxStat={maxBaseStat}
