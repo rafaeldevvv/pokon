@@ -5,10 +5,10 @@ import CatalogCard from "../CatalogCard";
 import ValueIndicatorBar from "../ValueIndicatorBar";
 
 const statsIcons = {
-  hp: "/icons/hp.png",
-  attack: "/icons/attack.png",
-  defense: "/icons/defense.png",
-  speed: "/icons/speed.png",
+  hp: "/icons/hp.svg",
+  attack: "/icons/attack.svg",
+  defense: "/icons/defense.svg",
+  speed: "/icons/speed.svg",
 } as const;
 
 export default function PokemonCard({
@@ -121,7 +121,7 @@ export function StatIndicator({
         {name.replaceAll("-", " ")}: {statValue} out of {maxStat}
       </span>
       <div className="flex gap-x-2 items-center">
-        <Image src={statsIcons[name]} alt={name} width="20" height="20" />
+        <Image src={statsIcons[name]} alt={name} width="25" height="25" />
         <ValueIndicatorBar
           value={statValue}
           max={maxStat}
