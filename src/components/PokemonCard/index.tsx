@@ -11,12 +11,12 @@ const statsIcons = {
   speed: "/icons/speed.svg",
 } as const;
 
+const pokemonMaxStatValue = 255;
+
 export default function PokemonCard({
   pokemon,
-  maxBaseStat,
 }: {
   pokemon: PokemonWithColor;
-  maxBaseStat: number;
 }) {
   const sprite = pokemon.sprites.front_default;
 
@@ -34,7 +34,7 @@ export default function PokemonCard({
           </h3>
         </div>
         <div className="px-2 py-3">
-          <PokemonStats stats={pokemon.stats} maxBaseStat={maxBaseStat} />
+          <PokemonStats stats={pokemon.stats} />
         </div>
       </div>
     </CatalogCard>
@@ -76,13 +76,7 @@ export function PokemonSprite({
   );
 }
 
-export function PokemonStats({
-  stats,
-  maxBaseStat,
-}: {
-  stats: PokemonStat[];
-  maxBaseStat: number;
-}) {
+export function PokemonStats({ stats }: { stats: PokemonStat[] }) {
   const baseStats = mapStats(stats);
 
   const statses: ShownStatNames[] = ["hp", "attack", "defense", "speed"];
@@ -94,11 +88,7 @@ export function PokemonStats({
         if (!statValue) return null;
         return (
           <li key={statName}>
-            <StatIndicator
-              statValue={statValue}
-              maxStat={maxBaseStat}
-              name={statName}
-            />
+            <StatIndicator statValue={statValue} name={statName} />
           </li>
         );
       })}
@@ -108,11 +98,9 @@ export function PokemonStats({
 
 export function StatIndicator({
   statValue,
-  maxStat,
   name,
 }: {
   statValue: number;
-  maxStat: number;
   name: ShownStatNames;
 }) {
   return (
@@ -122,7 +110,7 @@ export function StatIndicator({
         <Image src={statsIcons[name]} alt="" width="25" height="25" />
         <ValueIndicatorBar
           value={statValue}
-          max={maxStat}
+          max={pokemonMaxStatValue}
           fgColor="bg-red-800"
           bgColor="bg-gray-300"
         />

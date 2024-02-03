@@ -1,10 +1,7 @@
 import { Metadata } from "next";
 import { CatalogSection, PokemonList, CatalogListSkeleton } from "@/components";
 import { checkPageNumber, getNumberOfPages } from "@/utils/common";
-import {
-  getCount as getPokemonCount,
-  listPokemonsForPage,
-} from "@/data-fetching/pokemon";
+import { listPokemonsForPage } from "@/data-fetching/pokemon";
 import { keywords as sharedKeywords } from "@/app/shared-metadata";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
@@ -60,12 +57,9 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: PokemonPageParams }) {
   const page = Number(params.page);
 
-  const [numPokemons, { results }] = await Promise.all([
-    getPokemonCount(),
-    listPokemonsForPage(page),
-  ]);
+  const { results, count } = await listPokemonsForPage(page);
 
-  const numPages = getNumberOfPages(numPokemons);
+  const numPages = getNumberOfPages(count);
   const invalid = checkPageNumber(page, numPages);
   if (invalid) notFound();
 
