@@ -1,28 +1,41 @@
 import Image from "next/image";
-import type { PokemonWithColor, PokemonStat } from "@/ts/types";
+import type { PokemonWithColor, PokemonStat, ShownStatNames } from "@/ts/types";
+import mapStats from "@/utils/pokemon/mapStats";
 import CatalogCard from "../CatalogCard";
+import ValueIndicatorBar from "../ValueIndicatorBar";
+
+const statsIcons = {
+  hp: "/icons/hp.svg",
+  attack: "/icons/attack.svg",
+  defense: "/icons/defense.svg",
+  speed: "/icons/speed.svg",
+} as const;
 
 export default function PokemonCard({
   pokemon,
+  maxBaseStat,
 }: {
   pokemon: PokemonWithColor;
+  maxBaseStat: number;
 }) {
   const sprite = pokemon.sprites.front_default;
 
   return (
     <CatalogCard>
-      <PokemonSprite
-        name={pokemon.name}
-        sprite={sprite}
-        color={pokemon.color}
-      />
-      <div className="border-y border-solid border-black py-2 px-2">
-        <h3 className="capitalize text-center leading-none font-title text-2xl">
-          {pokemon.name.replaceAll("-", " ")}
-        </h3>
-      </div>
-      <div className="px-2 py-3">
-        <PokemonStats stats={pokemon.stats} />
+      <div className="grid grid-rows-[max-content_1fr_max-content] h-full">
+        <PokemonSprite
+          name={pokemon.name}
+          sprite={sprite}
+          color={pokemon.color}
+        />
+        <div className="border-y border-solid border-black py-2 px-2 flex items-center">
+          <h3 className="capitalize text-center leading-none font-title text-2xl mx-auto">
+            {pokemon.name.replaceAll("-", " ")}
+          </h3>
+        </div>
+        <div className="px-2 py-3">
+          <PokemonStats stats={pokemon.stats} maxBaseStat={maxBaseStat} />
+        </div>
       </div>
     </CatalogCard>
   );
@@ -63,18 +76,57 @@ export function PokemonSprite({
   );
 }
 
-export function PokemonStats({ stats }: { stats: PokemonStat[] }) {
+export function PokemonStats({
+  stats,
+  maxBaseStat,
+}: {
+  stats: PokemonStat[];
+  maxBaseStat: number;
+}) {
+  const baseStats = mapStats(stats);
+
+  const statses: ShownStatNames[] = ["hp", "attack", "defense", "speed"];
+
   return (
-    <ul>
-      {stats.map((stat) => {
-        const { name } = stat.stat;
-        const baseState = stat.base_stat;
+    <ul className="space-y-2">
+      {statses.map((statName) => {
+        const statValue = baseStats[statName];
+        if (!statValue) return null;
         return (
-          <li key={stat.stat.name}>
-            {name.toUpperCase().replaceAll("-", " ")} {baseState}
+          <li key={statName}>
+            <StatIndicator
+              statValue={statValue}
+              maxStat={maxBaseStat}
+              name={statName}
+            />
           </li>
         );
       })}
     </ul>
+  );
+}
+
+export function StatIndicator({
+  statValue,
+  maxStat,
+  name,
+}: {
+  statValue: number;
+  maxStat: number;
+  name: ShownStatNames;
+}) {
+  return (
+    <div>
+      <span className="sr-only">{name.replaceAll("-", " ")}:</span>
+      <div className="flex gap-x-2 items-center">
+        <Image src={statsIcons[name]} alt="" width="25" height="25" />
+        <ValueIndicatorBar
+          value={statValue}
+          max={maxStat}
+          fgColor="bg-red-800"
+          bgColor="bg-gray-300"
+        />
+      </div>
+    </div>
   );
 }

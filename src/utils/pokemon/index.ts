@@ -1,2 +1,3 @@
 import findPokemonColor from "./findPokemonColor";
-export { findPokemonColor };
+import mapStats from "./mapStats";
+export { findPokemonColor, mapStats };
