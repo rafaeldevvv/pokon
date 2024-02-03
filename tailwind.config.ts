@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+import plugin from "tailwindcss/plugin";
+
 import defaultTheme from "tailwindcss/defaultTheme";
 
 const config: Config = {
@@ -25,17 +27,26 @@ const config: Config = {
         title: ["var(--ff-mono-title)", ...defaultTheme.fontFamily.mono],
       },
       gridTemplateRows: {
-        'global-layout': 'max-content 1fr max-content'
+        "global-layout": "max-content 1fr max-content",
       },
       spacing: {
-        'header': '83px'
-      }
+        header: "83px",
+      },
     },
     container: {
       center: true,
       padding: "2rem",
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".text-outline": {
+          "text-shadow":
+            "0px -2px black, -2px 0px black, 0 2px black, 2px 0 black",
+        },
+      });
+    }),
+  ],
 };
 export default config;

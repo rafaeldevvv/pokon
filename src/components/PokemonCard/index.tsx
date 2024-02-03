@@ -88,7 +88,7 @@ export function PokemonStats({
   const statses: ShownStatNames[] = ["hp", "attack", "defense", "speed"];
 
   return (
-    <ul className="space-y-4">
+    <ul className="space-y-2">
       {statses.map((statName) => {
         const statValue = baseStats[statName];
         if (!statValue) return null;
@@ -117,11 +117,9 @@ export function StatIndicator({
 }) {
   return (
     <div>
-      <span className="sr-only">
-        {name.replaceAll("-", " ")}: {statValue} out of {maxStat}
-      </span>
+      <span className="sr-only">{name.replaceAll("-", " ")}:</span>
       <div className="flex gap-x-2 items-center">
-        <Image src={statsIcons[name]} alt={name} width="25" height="25" />
+        <Image src={statsIcons[name]} alt="" width="25" height="25" />
         <ValueIndicatorBar
           value={statValue}
           max={maxStat}
