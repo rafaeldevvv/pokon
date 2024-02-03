@@ -14,6 +14,7 @@ import NotFoundForm from "./NotFoundForm";
 import CatalogListSkeleton from "./CatalogListSkeleton";
 import CardSkeleton from "./CardSkeleton";
 import CatalogPagination from "./CatalogPagination";
+import ProgressBar from "./ProgressBar";
 
 export {
   CatalogHeader,
@@ -32,4 +33,5 @@ export {
   CardSkeleton,
   CatalogListSkeleton,
   CatalogPagination,
+  ProgressBar
 };

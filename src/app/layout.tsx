@@ -3,8 +3,7 @@ import type { Metadata } from "next";
 import { keywords } from "./shared-metadata";
 
 import { vt323, courier } from "@/fonts";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import {ProgressBar, Header, Footer} from "@/components";
 
 const appName = process.env.APP_NAME as string,
   creatorName = process.env.CREATOR_NAME as string,
@@ -46,6 +45,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ProgressBar />        
       </body>
     </html>
   );
