@@ -5,7 +5,6 @@ import listPokemons from "./listPokemons";
 import listPokemonsForPage from "./listPokemonsForPage";
 import getPokemonsForPage from "./getPokemonsForPage";
 import getPokemonsWithColors from "./getPokemonsWithColors";
-import getMaxBaseStat from "./getMaxBaseStat";
 
 export {
   getCount,
@@ -15,5 +14,4 @@ export {
   getPokemonsWithColors,
   listPokemons,
   listPokemonsForPage,
-  getMaxBaseStat
 };
