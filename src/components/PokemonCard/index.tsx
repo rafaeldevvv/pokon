@@ -22,20 +22,18 @@ export default function PokemonCard({
 
   return (
     <CatalogCard>
-      <div className="grid grid-rows-[max-content_1fr_max-content] h-full">
-        <PokemonSprite
-          name={pokemon.name}
-          sprite={sprite}
-          color={pokemon.color}
-        />
-        <div className="border-y border-solid border-black py-2 px-2 flex items-center">
-          <h3 className="capitalize text-center leading-none font-title text-2xl mx-auto">
-            {pokemon.name.replaceAll("-", " ")}
-          </h3>
-        </div>
-        <div className="px-2 py-3">
-          <PokemonStats stats={pokemon.stats} />
-        </div>
+      <PokemonSprite
+        name={pokemon.name}
+        sprite={sprite}
+        color={pokemon.color}
+      />
+      <div className="border-y border-solid border-black py-2 px-2 flex items-center h-full">
+        <h3 className="capitalize text-center leading-none font-title text-2xl mx-auto">
+          {pokemon.name.replaceAll("-", " ")}
+        </h3>
+      </div>
+      <div className="px-2 py-3">
+        <PokemonStats stats={pokemon.stats} />
       </div>
     </CatalogCard>
   );
