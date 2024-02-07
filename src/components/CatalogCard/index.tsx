@@ -5,12 +5,10 @@ export default function CatalogCard({
 }) {
   return (
     <div
-      className="border border-solid border-black h-full grid grid-rows-subgrid "
+      className="border border-solid border-black h-full grid grid-rows-subgrid row-span-3 gap-0"
       style={{
-        display: "grid",
+        // grid-rows-subgrid is not applying for some reason
         gridTemplateRows: "subgrid",
-        gridRow: "span 3",
-        gap: "0",
       }}
     >
       {children}

@@ -1,5 +1,5 @@
 import { getItemsForPage } from "@/data-fetching/items";
-import CatalogList from "../CatalogList";
+import CatalogList, { ListItem } from "../CatalogList";
 import ItemCard from "../ItemCard";
 
 export default async function ItemsList({ page }: { page: number }) {
@@ -8,7 +8,9 @@ export default async function ItemsList({ page }: { page: number }) {
   return (
     <CatalogList>
       {items.map((item) => (
-        <ItemCard item={item} key={item.name} />
+        <ListItem key={item.name}>
+          <ItemCard item={item} />
+        </ListItem>
       ))}
     </CatalogList>
   );
