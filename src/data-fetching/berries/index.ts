@@ -1,7 +1,13 @@
 import getCount from "./getCount";
-import getItem from "./getBerry";
-import getItemsForPage from "./getBerriesForPage";
-import listItems from "./listBerries";
-import listItemsForPage from "./listBerriesForPage";
+import getBerry from "./getBerry";
+import getBerriesForPage from "./getBerriesForPage";
+import listBerries from "./listBerries";
+import listBerriesForPage from "./listBerriesForPage";
 
-export { getItem, getCount, getItemsForPage, listItems, listItemsForPage };
+export {
+  getBerry,
+  getCount,
+  getBerriesForPage,
+  listBerries,
+  listBerriesForPage,
+};
