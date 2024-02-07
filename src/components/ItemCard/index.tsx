@@ -1,5 +1,5 @@
 import { Item, NamedAPIResource } from "@/ts/types";
-import CatalogCard from "../CatalogCard";
+import CatalogCard, { Title } from "../CatalogCard";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -10,11 +10,7 @@ export default function ItemCard({ item }: { item: Item }) {
   return (
     <CatalogCard>
       <ItemSprite sprite={item.sprites.default} alt={item.name} />
-      <div className="p-2 border-t border-t-black border-solid border-b border-b-black">
-        <h3 className="text-center capitalize">
-          {item.name.replaceAll("-", " ")}
-        </h3>
-      </div>
+      <Title>{item.name.replaceAll("-", " ")}</Title>
       <div className="p-2">
         <ItemAttrs attrs={attributes} />
       </div>
