@@ -56,7 +56,7 @@ export function PokemonSprite({
   return (
     <div className="relative z-0 py-4">
       <div
-        className="absolute inset-0 opacity-50 z-[-1]"
+        className="absolute inset-0 opacity-30 z-[-1]"
         style={gradientStyles}
       />
       <Image
