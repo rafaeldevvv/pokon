@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { PokemonWithColor, PokemonStat, ShownStatNames } from "@/ts/types";
 import mapStats from "@/utils/pokemon/mapStats";
-import CatalogCard from "../CatalogCard";
+import CatalogCard, { Title } from "../CatalogCard";
 import ValueIndicatorBar from "../ValueIndicatorBar";
 
 const statsIcons = {
@@ -27,11 +27,7 @@ export default function PokemonCard({
         sprite={sprite}
         color={pokemon.color}
       />
-      <div className="border-y border-solid border-black py-2 px-2 flex items-center h-full">
-        <h3 className="capitalize text-center leading-none font-title text-2xl mx-auto">
-          {pokemon.name.replaceAll("-", " ")}
-        </h3>
-      </div>
+      <Title>{pokemon.name.replaceAll("-", " ")}</Title>
       <div className="px-2 py-3">
         <PokemonStats stats={pokemon.stats} />
       </div>
