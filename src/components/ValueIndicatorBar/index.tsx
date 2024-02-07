@@ -28,9 +28,6 @@ export default function ValueIndicatorBar({
           </span>
         </div>
       </div>
-      {/* so it is 10 out of 255 for screen readers, for example */}
-      <span className="sr-only">&nbsp;out of&nbsp;</span>
-      <span>{max}</span>
     </div>
   );
 }
