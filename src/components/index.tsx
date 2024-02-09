@@ -15,6 +15,9 @@ import CatalogListSkeleton from "./CatalogListSkeleton";
 import CardSkeleton from "./CardSkeleton";
 import CatalogPagination from "./CatalogPagination";
 import ProgressBar from "./ProgressBar";
+import ItemsList from "./ItemsList";
+import BerriesList from "./BerriesList";
+import BerryCard from "./BerryCard";
 
 export {
   CatalogHeader,
@@ -33,5 +36,8 @@ export {
   CardSkeleton,
   CatalogListSkeleton,
   CatalogPagination,
-  ProgressBar
+  ProgressBar,
+  BerriesList,
+  BerryCard,
+  ItemsList
 };

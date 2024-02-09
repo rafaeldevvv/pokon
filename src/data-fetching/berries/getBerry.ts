@@ -8,5 +8,5 @@ import fetchPokeApiData from "../fetchPokeApiData";
  * @returns - A promise that resolves to a {@link Berry}.
  */
 export default function getItem(idOrName: string | number): Promise<Berry> {
-  return fetchPokeApiData(`item/${idOrName}`);
+  return fetchPokeApiData(`berry/${idOrName}`);
 }
