@@ -1,5 +1,5 @@
 import { Berry, NamedAPIResourceList } from "@/ts/types";
-import { getBerry } from ".";
+import getBerry from "./getBerry";
 
 export default async function getBerriesForList(
   l: NamedAPIResourceList

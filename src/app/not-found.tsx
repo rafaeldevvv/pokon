@@ -1,4 +1,5 @@
-import { NotFoundTitle, NotFoundLink } from "@/components";
+import NotFoundLink from "@/components/NotFoundLink";
+import NotFoundTitle from "@/components/NotFoundTitle";
 
 export default function NotFound() {
   return (

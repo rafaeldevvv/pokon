@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { notFound } from "next/navigation";
 
 import { keywords } from "@/app/shared-metadata";
-import {
-  listItemsForPage,
-  getCount as getItemsCount,
-} from "@/data-fetching/items";
-import { CatalogListSkeleton, CatalogSection } from "@/components";
-import { Suspense } from "react";
+
 import ItemsList from "@/components/ItemsList";
+import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogSection from "@/components/CatalogSection";
+
+import getItemsCount from "@/data-fetching/items/getCount";
+import listItemsForPage from "@/data-fetching/items/listItemsForPage";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+import checkPageNumber from "@/utils/common/checkPageNumber";
+
 import { CatalogPageParams } from "@/ts/types";
-import { checkPageNumber, getNumberOfPages } from "@/utils/common";
-import { notFound } from "next/navigation";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;

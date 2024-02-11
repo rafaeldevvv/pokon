@@ -1,7 +1,10 @@
 import { Metadata } from "next";
-import { CatalogSection, PokemonList, CatalogListSkeleton } from "@/components";
-import { checkPageNumber, getNumberOfPages } from "@/utils/common";
-import { listPokemonsForPage } from "@/data-fetching/pokemon";
+import PokemonList from "@/components/PokemonList";
+import CatalogSection from "@/components/CatalogSection";
+import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import checkPageNumber from "@/utils/common/checkPageNumber";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+import listPokemonsForPage from "@/data-fetching/pokemon/listPokemonsForPage";
 import { keywords as sharedKeywords } from "@/app/shared-metadata";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";

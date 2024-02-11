@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { getPokemonsForPage } from "@/data-fetching/pokemon";
-import { createImagesGrid } from "@/utils/server";
+import getPokemonsForPage from "@/data-fetching/pokemon/getPokemonsForPage";
+import createImagesGrid from "@/utils/server/createImagesGrid";
 import { notFound } from "next/navigation";
 
 export const runtime = "edge";
@@ -14,7 +14,7 @@ export async function GET(
 ) {
   const page = Number(context.params.page);
   const pokemons = await getPokemonsForPage(page);
-  
+
   if (pokemons.length === 0) notFound();
 
   const sprites = pokemons

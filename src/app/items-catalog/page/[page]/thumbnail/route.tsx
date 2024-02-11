@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
-import { getItemsForPage } from "@/data-fetching/items";
-import { createImagesGrid } from "@/utils/server";
+import getItemsForPage from "@/data-fetching/items/getItemsForPage";
+import createImagesGrid from "@/utils/server/createImagesGrid";
 import { notFound } from "next/navigation";
 
 export const runtime = "edge";

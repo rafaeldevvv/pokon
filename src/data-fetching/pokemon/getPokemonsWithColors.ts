@@ -1,7 +1,7 @@
 import type { PokemonWithColor } from "@/ts/types";
 import getPokemons from "./getPokemons";
 import getColors from "../color/getColors";
-import { findPokemonColor } from "@/utils/pokemon";
+import findPokemonColor from "@/utils/pokemon/findPokemonColor";
 import "server-only";
 
 export default async function getPokemonsWithColors(

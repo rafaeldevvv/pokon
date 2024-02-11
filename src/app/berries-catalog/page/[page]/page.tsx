@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
 
 import { keywords } from "@/app/shared-metadata";
-import { listBerriesForPage } from "@/data-fetching/berries";
-import { CatalogListSkeleton, CatalogSection, BerriesList } from "@/components";
-import { Suspense } from "react";
+
+import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogSection from "@/components/CatalogSection";
+import BerriesList from "@/components/BerriesList";
+
+import listBerriesForPage from "@/data-fetching/berries/listBerriesForPage";
+import checkPageNumber from "@/utils/common/checkPageNumber";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+
 import { CatalogPageParams } from "@/ts/types";
-import { checkPageNumber, getNumberOfPages } from "@/utils/common";
-import { notFound } from "next/navigation";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
@@ -72,9 +78,7 @@ export default async function BerriesCatalogPage({
 
   return (
     <CatalogSection label={`Berries List for page 1`}>
-      <Suspense
-        fallback={<CatalogListSkeleton numOfItems={results.length} />}
-      >
+      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
         <BerriesList list={list} />
       </Suspense>
     </CatalogSection>

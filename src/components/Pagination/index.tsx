@@ -4,7 +4,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import { checkPageNumber } from "@/utils/common";
+import checkPageNumber from "@/utils/common/checkPageNumber";
 
 /**
  * A pagination component that expects the total number of pages,

@@ -1,4 +1,4 @@
-import { getItemsForPage } from "@/data-fetching/items";
+import getItemsForPage from "@/data-fetching/items/getItemsForPage";
 import CatalogList, { ListItem } from "../CatalogList";
 import ItemCard from "../ItemCard";
 

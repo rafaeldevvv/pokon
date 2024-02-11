@@ -1,8 +1,8 @@
 import CatalogList, { ListItem } from "../CatalogList";
 import BerryCard from "../BerryCard";
 import { NamedAPIResourceList } from "@/ts/types";
-import { getBerriesForList } from "@/data-fetching/berries";
-import { getItem } from "@/data-fetching/items";
+import getBerriesForList from "@/data-fetching/berries/getBerriesForList";
+import getItem from "@/data-fetching/items/getItem";
 
 export default async function BerriesList({
   list,

@@ -1,4 +1,4 @@
-import { listPokemons } from "./";
+import listPokemons from "./listPokemons";
 import config from "@/catalog-config";
 const { itemsPerPage } = config;
 import "server-only";

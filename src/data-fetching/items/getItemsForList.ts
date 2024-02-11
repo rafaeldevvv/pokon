@@ -1,5 +1,5 @@
 import type { Item, NamedAPIResourceList } from "@/ts/types";
-import { getItem } from ".";
+import getItem from "./getItem";
 
 export default async function getItemsForList(
   l: NamedAPIResourceList

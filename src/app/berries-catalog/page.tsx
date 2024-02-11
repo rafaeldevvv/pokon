@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { keywords } from "../shared-metadata";
-import { listBerriesForPage } from "@/data-fetching/berries";
-import { CatalogListSkeleton, CatalogSection, BerriesList } from "@/components";
-import { Suspense } from "react";
+
+import listBerriesForPage from "@/data-fetching/berries/listBerriesForPage";
+
+import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogSection from "@/components/CatalogSection";
+import BerriesList from "@/components/BerriesList";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;

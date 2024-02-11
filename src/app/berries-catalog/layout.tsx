@@ -1,7 +1,7 @@
 import CatalogHeader from "@/components/CatalogHeader";
-import { CatalogPagination } from "@/components";
-import { getNumberOfPages } from "@/utils/common";
-import { getCount } from "@/data-fetching/berries";
+import CatalogPagination from "@/components/CatalogPagination";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+import getCount from "@/data-fetching/berries/getCount";
 
 export default async function CatalogLayout({
   children,

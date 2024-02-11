@@ -1,7 +1,7 @@
 import CatalogHeader from "@/components/CatalogHeader";
-import { CatalogPagination } from "@/components";
-import { getNumberOfPages } from "@/utils/common";
-import { getCount as getPokemonCount } from "@/data-fetching/pokemon";
+import CatalogPagination from "@/components/CatalogPagination";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+import getPokemonCount from "@/data-fetching/pokemon/getCount";
 
 export default async function CatalogLayout({
   children,

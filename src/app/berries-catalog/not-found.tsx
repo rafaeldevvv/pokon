@@ -1,7 +1,7 @@
-import { NotFoundTitle } from "@/components";
-import { getCount } from "@/data-fetching/berries";
-import { getNumberOfPages } from "@/utils/common";
-import { NotFoundForm } from "@/components";
+import getCount from "@/data-fetching/berries/getCount";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+import NotFoundForm from "@/components/NotFoundForm";
+import NotFoundTitle from "@/components/NotFoundTitle";
 
 export default async function PageNotFound() {
   const pokemonsTotal = await getCount();

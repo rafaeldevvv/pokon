@@ -1,7 +1,7 @@
-import { NotFoundTitle } from "@/components";
-import { getCount } from "@/data-fetching/pokemon";
-import { getNumberOfPages } from "@/utils/common";
-import { NotFoundForm } from "@/components";
+import getCount from "@/data-fetching/pokemon/getCount";
+import getNumberOfPages from "@/utils/common/getNumberOfPages";
+import NotFoundForm from "@/components/NotFoundForm";
+import NotFoundTitle from "@/components/NotFoundTitle";
 
 export default async function PageNotFound() {
   const pokemonsTotal = await getCount();
@@ -11,8 +11,8 @@ export default async function PageNotFound() {
     <div className="max-w-lg text-center px-4 mx-auto my-16">
       <NotFoundTitle />
       <p className="mb-4">
-        The page you&apos;re looking for is not available. Which page would you like
-        to see?
+        The page you&apos;re looking for is not available. Which page would you
+        like to see?
       </p>
       <NotFoundForm numOfPages={pages} baseUrl="/pokemon-catalog/" />
     </div>

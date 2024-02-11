@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 import { keywords } from "../shared-metadata";
-import { listItemsForPage } from "@/data-fetching/items";
-import { CatalogListSkeleton, CatalogSection } from "@/components";
-import { Suspense } from "react";
+
+import listItemsForPage from "@/data-fetching/items/listItemsForPage";
+
 import ItemsList from "@/components/ItemsList";
+import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogSection from "@/components/CatalogSection";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;
@@ -51,7 +54,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ItemsCatalog() {
   const { results } = await listItemsForPage(1);
-  
+
   return (
     <CatalogSection label={`Items List for page 1`}>
       <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>

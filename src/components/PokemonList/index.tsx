@@ -1,5 +1,5 @@
-import { PokemonCard } from "@/components";
-import { getPokemonsForPage } from "@/data-fetching/pokemon";
+import PokemonCard from "@/components/PokemonCard";
+import getPokemonsForPage from "@/data-fetching/pokemon/getPokemonsForPage";
 import CatalogList, { ListItem } from "../CatalogList";
 
 export default async function PokemonList({ page }: { page: number }) {

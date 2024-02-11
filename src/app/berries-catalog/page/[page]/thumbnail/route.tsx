@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { createImagesGrid } from "@/utils/server";
+import createImagesGrid from "@/utils/server/createImagesGrid";
 import { notFound } from "next/navigation";
 import getItem from "@/data-fetching/items/getItem";
 import getBerriesForPage from "@/data-fetching/berries/getBerriesForPage";
