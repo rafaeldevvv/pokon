@@ -95,10 +95,12 @@ export function PrimaryNavigation({ isExpanded }: { isExpanded: boolean }) {
   let primaryNavClassName =
     "w-60 h-42 flex gap-y-3 md:gap-y-0 md:gap-x-8 justify-center content-center flex-col absolute right-0 top-16 bg-white px-6 py-6 border-black border-2 text-xl md:static md:bg-transparent md:flex-row md:w-auto md:border-0 md:p-0 transition-size duration-500 ease-in-out origin-top-right";
   if (!isExpanded) {
-    /* the scaling can only happen on mobile, 
-    if it happens on a desktop, there's no 
+    /* the scaling can only happen on smaller screens,
+    if it happens on larger screens, there's no 
     way for the user to get it showing up */
-    primaryNavClassName += " max-[48em]:scale-0";
+    primaryNavClassName += " max-[47.9em]:scale-0";
+    /* also, it can't be max-[48em] because the navigation does not 
+    show up in 768px wide screens */
   }
 
   return (

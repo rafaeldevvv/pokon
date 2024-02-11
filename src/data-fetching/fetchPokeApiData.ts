@@ -28,5 +28,9 @@ export default function fetchPokeApiData(
 
   return fetch(`https://pokeapi.co/api/v2/${path}/${queryString}`, {
     next: { revalidate: 60 * 60 * 24 * 7 }, // revalidate the data every week
-  }).then((res) => res.json());
+  }).then((res) => {
+    const {status, statusText, url} = res;
+    if (status >= 400) throw new Error(`Request to '${url}' failed with: ${status} ${statusText}`);
+    return res.json();
+  });
 }
