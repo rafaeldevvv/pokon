@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 
-import plugin from "tailwindcss/plugin";
-
 import defaultTheme from "tailwindcss/defaultTheme";
+
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -38,15 +38,5 @@ const config: Config = {
       padding: "2rem",
     },
   },
-  plugins: [
-    plugin(function ({ addUtilities }) {
-      addUtilities({
-        ".text-outline": {
-          "text-shadow":
-            "0px -2px black, -2px 0px black, 0 2px black, 2px 0 black",
-        },
-      });
-    }),
-  ],
 };
 export default config;

@@ -27,6 +27,11 @@
   .image-high {
     image-rendering: high-quality;
   }
+
+  .text-outline {
+    text-shadow:
+      0px -2px black, -2px 0px black, 0 2px black, 2px 0 black;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
