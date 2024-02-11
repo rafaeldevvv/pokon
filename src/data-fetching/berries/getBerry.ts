@@ -7,6 +7,6 @@ import fetchPokeApiData from "../fetchPokeApiData";
  * @param idOrName - The id or name of the berry.
  * @returns - A promise that resolves to a {@link Berry}.
  */
-export default function getItem(idOrName: string | number): Promise<Berry> {
+export default function getBerry(idOrName: string | number): Promise<Berry> {
   return fetchPokeApiData(`berry/${idOrName}`);
 }
