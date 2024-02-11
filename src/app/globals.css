@@ -6,19 +6,31 @@
   .text-shadow {
     text-shadow: 1px 2px black;
   }
-}
 
-:root {
+  .image-auto {
+    image-rendering: auto;
+  }
 
-}
+  .image-pixelated {
+    image-rendering: pixelated;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+  .image-crisp {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
 
+  .image-smooth {
+    image-rendering: smooth;
+  }
+
+  .image-high {
+    image-rendering: high-quality;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

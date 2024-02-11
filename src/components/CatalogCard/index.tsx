@@ -44,7 +44,7 @@ export function Sprite({
         width="100"
         height="100"
         alt={alt}
-        className="mx-auto"
+        className="mx-auto image-pixelated"
       />
     </div>
   );

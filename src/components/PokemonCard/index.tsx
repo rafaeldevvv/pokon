@@ -64,7 +64,7 @@ export function PokemonSprite({
         alt={name}
         width="100"
         height="100"
-        className="mx-auto h-[100px]"
+        className="mx-auto h-[100px] image-pixelated"
       />
     </div>
   );
