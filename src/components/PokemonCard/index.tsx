@@ -19,15 +19,12 @@ export default function PokemonCard({
   pokemon: PokemonWithColor;
 }) {
   const sprite = pokemon.sprites.front_default;
+  const name = pokemon.name.replaceAll("-", " ");
 
   return (
     <CatalogCard>
-      <PokemonSprite
-        name={pokemon.name}
-        sprite={sprite}
-        color={pokemon.color}
-      />
-      <Title>{pokemon.name.replaceAll("-", " ")}</Title>
+      <PokemonSprite alt={name} sprite={sprite} color={pokemon.color} />
+      <Title>{name}</Title>
       <div className="px-2 py-3">
         <PokemonStats stats={pokemon.stats} />
       </div>
@@ -36,11 +33,11 @@ export default function PokemonCard({
 }
 
 export function PokemonSprite({
-  name,
+  alt,
   color,
   sprite,
 }: {
-  name: string;
+  alt: string;
   color: string;
   sprite: null | string;
 }) {
@@ -61,7 +58,7 @@ export function PokemonSprite({
       />
       <Image
         src={src}
-        alt={name}
+        alt={alt}
         width="100"
         height="100"
         className="mx-auto h-[100px] image-pixelated"

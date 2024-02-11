@@ -5,15 +5,16 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function ItemCard({ item }: { item: Item }) {
   const { attributes } = item;
+  const name = item.name.replaceAll("-", " ");
 
   return (
     <CatalogCard>
       <Sprite
         sprite={item.sprites.default}
-        alt={item.name}
+        alt={name}
         defaultSrc="/unknown-item.png"
       />
-      <Title>{item.name.replaceAll("-", " ")}</Title>
+      <Title>{name}</Title>
       <div className="p-2">
         <ItemAttrs attrs={attributes} />
       </div>

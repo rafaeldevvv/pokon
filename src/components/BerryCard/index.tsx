@@ -25,6 +25,7 @@ export default function BerryCard({
   berryAsItem: Item;
 }) {
   const { name, firmness, flavors } = berry;
+  const berryName = name.replaceAll("-", " ");
   const flavor = flavors.filter((f) => f.potency !== 0)[0];
   const flavorName = flavor.flavor.name as BerryFlavor["name"];
 
@@ -32,10 +33,10 @@ export default function BerryCard({
     <CatalogCard>
       <Sprite
         sprite={berryAsItem.sprites.default}
-        alt={name}
+        alt={berryName}
         defaultSrc="/unknown-berry.png"
       />
-      <Title>{name}</Title>
+      <Title>{berryName}</Title>
       <div className="p-4 space-y-4">
         <CategorizedBerryData
           data={firmness.name.replaceAll("-", " ")}
