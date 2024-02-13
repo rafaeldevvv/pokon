@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 import { keywords } from "@/app/shared-metadata";
 
-import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import BerryListSkeleton from "@/components/Skeletons/BerryCatalogList";
 import CatalogSection from "@/components/CatalogSection";
 import BerriesList from "@/components/BerriesList";
 
@@ -78,7 +78,7 @@ export default async function BerriesCatalogPage({
 
   return (
     <CatalogSection label={`Berries List for page 1`}>
-      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+      <Suspense fallback={<BerryListSkeleton numOfItems={results.length} />}>
         <BerriesList list={list} />
       </Suspense>
     </CatalogSection>

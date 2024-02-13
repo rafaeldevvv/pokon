@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { keywords } from "@/app/shared-metadata";
 
 import ItemsList from "@/components/ItemsList";
-import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 import CatalogSection from "@/components/CatalogSection";
 
 import getItemsCount from "@/data-fetching/items/getCount";

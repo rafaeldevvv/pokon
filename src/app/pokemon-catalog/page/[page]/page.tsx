@@ -1,13 +1,16 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import { Suspense } from "react";
+
 import PokemonList from "@/components/PokemonList";
 import CatalogSection from "@/components/CatalogSection";
-import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
+
 import checkPageNumber from "@/utils/common/checkPageNumber";
 import getNumberOfPages from "@/utils/common/getNumberOfPages";
 import listPokemonsForPage from "@/data-fetching/pokemon/listPokemonsForPage";
+
 import { keywords as sharedKeywords } from "@/app/shared-metadata";
-import { notFound } from "next/navigation";
-import { Suspense } from "react";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;

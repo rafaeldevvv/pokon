@@ -1,10 +1,13 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
-import listPokemonsForPage from "@/data-fetching/pokemon/listPokemonsForPage";
+
 import PokemonList from "@/components/PokemonList";
 import CatalogSection from "@/components/CatalogSection";
-import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
+
+import listPokemonsForPage from "@/data-fetching/pokemon/listPokemonsForPage";
+
 import { keywords as sharedKeywords } from "../shared-metadata";
-import { Suspense } from "react";
 
 const appName = process.env.APP_NAME as string,
   creatorTwitterUsername = process.env.CREATOR_TWITTER_USERNAME as string;

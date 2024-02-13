@@ -6,7 +6,7 @@ import { keywords } from "../shared-metadata";
 import listItemsForPage from "@/data-fetching/items/listItemsForPage";
 
 import ItemsList from "@/components/ItemsList";
-import CatalogListSkeleton from "@/components/CatalogListSkeleton";
+import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 import CatalogSection from "@/components/CatalogSection";
 
 const appName = process.env.APP_NAME as string,

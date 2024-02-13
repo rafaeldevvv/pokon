@@ -1,7 +1,7 @@
-import CardSkeleton from "../CardSkeleton";
 import CatalogList from "../CatalogList";
+import BerryCardSkeleton from "./BerryCard";
 
-export default function CatalogListSkeleton({
+export default function BerryCatalogListSkeleton({
   numOfItems,
 }: {
   numOfItems: number;
@@ -12,7 +12,7 @@ export default function CatalogListSkeleton({
         .fill(undefined)
         .map((_, i) => (
           <li key={i}>
-            <CardSkeleton />
+            <BerryCardSkeleton />
           </li>
         ))}
     </CatalogList>
