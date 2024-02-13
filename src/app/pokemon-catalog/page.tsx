@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 import PokemonList from "@/components/PokemonList";
 import CatalogSection from "@/components/CatalogSection";
+import CommonCardSkeleton from "@/components/Skeletons/CommonCatalogCard";
 import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 
 import listPokemonsForPage from "@/data-fetching/pokemon/listPokemonsForPage";
@@ -54,7 +55,14 @@ export default async function PokemonCatalog() {
   const { results } = await listPokemonsForPage(1);
   return (
     <CatalogSection label="Pokemon list">
-      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+      <Suspense
+        fallback={
+          <CatalogListSkeleton
+            numOfItems={results.length}
+            CardComponent={CommonCardSkeleton}
+          />
+        }
+      >
         <PokemonList page={1} />
       </Suspense>
     </CatalogSection>

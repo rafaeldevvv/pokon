@@ -1,10 +1,13 @@
-import CardSkeleton from "./CatalogCard";
 import CatalogList from "../CatalogList";
+
+type CardComponent = () => React.ReactNode;
 
 export default function CatalogListSkeleton({
   numOfItems,
+  CardComponent,
 }: {
   numOfItems: number;
+  CardComponent: CardComponent
 }) {
   return (
     <CatalogList>
@@ -12,7 +15,7 @@ export default function CatalogListSkeleton({
         .fill(undefined)
         .map((_, i) => (
           <li key={i}>
-            <CardSkeleton />
+            <CardComponent />
           </li>
         ))}
     </CatalogList>

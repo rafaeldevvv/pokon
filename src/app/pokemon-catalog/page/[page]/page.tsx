@@ -4,6 +4,7 @@ import { Suspense } from "react";
 
 import PokemonList from "@/components/PokemonList";
 import CatalogSection from "@/components/CatalogSection";
+import CommonCardSkeleton from "@/components/Skeletons/CommonCatalogCard";
 import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 
 import checkPageNumber from "@/utils/common/checkPageNumber";
@@ -71,7 +72,14 @@ export default async function Page({ params }: { params: PokemonPageParams }) {
 
   return (
     <CatalogSection label="Pokemon List">
-      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+      <Suspense
+        fallback={
+          <CatalogListSkeleton
+            numOfItems={results.length}
+            CardComponent={CommonCardSkeleton}
+          />
+        }
+      >
         <PokemonList page={page} />
       </Suspense>
     </CatalogSection>

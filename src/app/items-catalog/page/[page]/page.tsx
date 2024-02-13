@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { keywords } from "@/app/shared-metadata";
 
 import ItemsList from "@/components/ItemsList";
+import CommonCardSkeleton from "@/components/Skeletons/CommonCatalogCard";
 import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 import CatalogSection from "@/components/CatalogSection";
 
@@ -81,7 +82,14 @@ export default async function ItemsCatalogPage({
 
   return (
     <CatalogSection label={`Items List for Page ${[page]}`}>
-      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+      <Suspense
+        fallback={
+          <CatalogListSkeleton
+            numOfItems={results.length}
+            CardComponent={CommonCardSkeleton}
+          />
+        }
+      >
         <ItemsList page={page} />
       </Suspense>
     </CatalogSection>

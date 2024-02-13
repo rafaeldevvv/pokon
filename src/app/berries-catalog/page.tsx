@@ -5,7 +5,8 @@ import { keywords } from "../shared-metadata";
 
 import listBerriesForPage from "@/data-fetching/berries/listBerriesForPage";
 
-import BerryListSkeleton from "@/components/Skeletons/BerryCatalogList";
+import BerryCardSkeleton from "@/components/Skeletons/BerryCard";
+import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 import CatalogSection from "@/components/CatalogSection";
 import BerriesList from "@/components/BerriesList";
 
@@ -58,7 +59,12 @@ export default async function BerriesCatalog() {
   return (
     <CatalogSection label={`Berries List for page 1`}>
       <Suspense
-        fallback={<BerryListSkeleton numOfItems={list.results.length} />}
+        fallback={
+          <CatalogListSkeleton
+            numOfItems={list.results.length}
+            CardComponent={BerryCardSkeleton}
+          />
+        }
       >
         <BerriesList list={list} />
       </Suspense>

@@ -6,6 +6,7 @@ import { keywords } from "../shared-metadata";
 import listItemsForPage from "@/data-fetching/items/listItemsForPage";
 
 import ItemsList from "@/components/ItemsList";
+import CommonCardSkeleton from "@/components/Skeletons/CommonCatalogCard";
 import CatalogListSkeleton from "@/components/Skeletons/CatalogList";
 import CatalogSection from "@/components/CatalogSection";
 
@@ -57,7 +58,14 @@ export default async function ItemsCatalog() {
 
   return (
     <CatalogSection label={`Items List for page 1`}>
-      <Suspense fallback={<CatalogListSkeleton numOfItems={results.length} />}>
+      <Suspense
+        fallback={
+          <CatalogListSkeleton
+            numOfItems={results.length}
+            CardComponent={CommonCardSkeleton}
+          />
+        }
+      >
         <ItemsList page={1} />
       </Suspense>
     </CatalogSection>
