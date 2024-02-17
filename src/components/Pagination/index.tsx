@@ -87,9 +87,7 @@ export default function Pagination({
   return (
     <Nav>
       {links}
-      <div
-        className={`w-max mx-auto md:mx-0 mt-6 md:mt-8 ${formWrapperClasses}`}
-      >
+      <div className={`w-max mx-auto md:mx-0 mt-8 ${formWrapperClasses}`}>
         <GoToPageForm baseUrl={baseUrl} numOfPages={total} />
       </div>
       <div className="clear-both"></div>
@@ -122,7 +120,7 @@ export function MobilePrevNextLinks({
   baseUrl: string;
 }) {
   return (
-    <div className="md:hidden flex justify-center gap-4 mt-6">
+    <div className="md:hidden flex justify-center gap-4 mt-8">
       {current > 1 && <PreviousPageLink baseUrl={baseUrl} current={current} />}
       {current < total && <NextPageLink current={current} baseUrl={baseUrl} />}
     </div>

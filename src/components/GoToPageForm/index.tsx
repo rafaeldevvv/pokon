@@ -11,7 +11,7 @@ import {
 } from "react";
 import { useRouter } from "next/navigation";
 
-export default function NotFoundForm({
+export default function GoToPageForm({
   numOfPages,
   baseUrl,
 }: {
@@ -61,7 +61,7 @@ export default function NotFoundForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex gap-2 w-max relative"
+      className="flex gap-2 w-max relative text-lg"
       noValidate
     >
       <p>
@@ -125,7 +125,7 @@ export function SubmitButton() {
   return (
     <button
       type="submit"
-      className="text-white font-title border-2 border-solid border-red-600 bg-red-600 px-2 text-xl hover:text-red-600 hover:bg-white active:scale-90"
+      className="text-white font-title border-2 border-solid border-red-600 bg-red-600 px-2 text-2xl hover:text-red-600 hover:bg-white active:scale-90"
     >
       GO!
     </button>
