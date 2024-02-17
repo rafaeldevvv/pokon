@@ -1,6 +1,6 @@
 import getCount from "@/data-fetching/pokemon/getCount";
 import getNumberOfPages from "@/utils/common/getNumberOfPages";
-import NotFoundForm from "@/components/NotFoundForm";
+import NotFoundForm from "@/components/GoToPageForm";
 import NotFoundTitle from "@/components/NotFoundTitle";
 
 export default async function PageNotFound() {
@@ -14,7 +14,9 @@ export default async function PageNotFound() {
         The page you&apos;re looking for is not available. Which page would you
         like to see?
       </p>
-      <NotFoundForm numOfPages={pages} baseUrl="/pokemon-catalog/" />
+      <div className="mx-auto w-max">
+        <NotFoundForm numOfPages={pages} baseUrl="/pokemon-catalog/" />
+      </div>
     </div>
   );
 }

@@ -44,6 +44,7 @@ export default function NotFoundForm({
         setError(`Page must be an integer between 1 and ${numOfPages}`);
       } else {
         router.replace(baseUrl + "page/" + page);
+        setPage("");
       }
     },
     [page, numOfPages, baseUrl, router]
@@ -60,7 +61,7 @@ export default function NotFoundForm({
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex gap-2 w-max mx-auto relative"
+      className="flex gap-2 w-max relative"
       noValidate
     >
       <p>
