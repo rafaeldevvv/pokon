@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import {keywords} from "../shared-metadata";
+
 const appName = process.env.APP_NAME as string;
+
+export const metadata: Metadata = {
+  title: "Pokédex",
+  description: `${appName}'s Pokédex provides detailed information about all Pokémon in the entire game series`,
+  keywords: [...keywords, "pokedex", "list"],
+};
 
 export default function Pokedex() {
   return (
