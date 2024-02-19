@@ -21,8 +21,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        body: ["var(--ff-body)", ...defaultTheme.fontFamily.mono],
-        title: ["var(--ff-title)", ...defaultTheme.fontFamily.mono],
+        body: ["var(--ff-courier-prime)", ...defaultTheme.fontFamily.mono],
+        title: ["var(--ff-vt323)", ...defaultTheme.fontFamily.mono],
       },
       gridTemplateRows: {
         "global-layout": "max-content 1fr max-content",
