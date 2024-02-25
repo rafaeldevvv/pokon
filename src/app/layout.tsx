@@ -38,10 +38,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("X".repeat(100));
-  console.log("rendering global layout, variable are");
-  console.log(vt323.variable, courier.variable);
-  console.log("X".repeat(100));
   return (
     <html
       lang="en"
